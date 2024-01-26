@@ -27,7 +27,7 @@ public class Player : MonoBehaviour
         rb.velocity = new Vector2(horizontal * ms, rb.velocity.y);
         if (!IsGrounded()) groundedCD += Time.fixedDeltaTime;
         else groundedCD = 0;
-        if (groundedCD <= 0.001f) canJump = true;
+        if (groundedCD <= 0.1f) canJump = true;
         else canJump = false;   
     }
 

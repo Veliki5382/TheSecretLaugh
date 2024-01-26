@@ -82,8 +82,8 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_AngularDrag: 0
+  m_GravityScale: 5
   m_Material: {fileID: 6200000, guid: 814f6544c7389c24bab9e96461edbc38, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
@@ -91,10 +91,10 @@ Rigidbody2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &8430224395006552554
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -275,7 +275,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   ms: 8
-  jumpingPower: 16
+  jumpingPower: 24
 --- !u!61 &3213277135968468602
 BoxCollider2D:
   m_ObjectHideFlags: 0

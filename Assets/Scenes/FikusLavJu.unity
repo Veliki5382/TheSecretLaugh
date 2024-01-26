@@ -202,8 +202,8 @@ Transform:
   m_GameObject: {fileID: 67638800}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.0143, y: -4.43, z: 0}
-  m_LocalScale: {x: 19.9286, y: 1, z: 1}
+  m_LocalPosition: {x: 0.0143, y: -3.9919, z: 0}
+  m_LocalScale: {x: 19.9286, y: 0.1239, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -395,7 +395,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.0005784631, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -406,7 +406,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.0011569, y: 1}
   m_EdgeRadius: 0
 --- !u!212 &1475295364
 SpriteRenderer:
@@ -469,8 +469,8 @@ Transform:
   m_GameObject: {fileID: 1475295362}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.4, y: -1.59, z: 0}
-  m_LocalScale: {x: 19.9286, y: 1, z: 1}
+  m_LocalPosition: {x: -9.02, y: -1.062, z: 0}
+  m_LocalScale: {x: 19.9286, y: 0.123882, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -599,8 +599,8 @@ Transform:
   m_GameObject: {fileID: 1636634836}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 11.31, y: 1.45, z: 0}
-  m_LocalScale: {x: 19.9286, y: 1, z: 1}
+  m_LocalPosition: {x: 11.31, y: 1.865, z: 0}
+  m_LocalScale: {x: 19.9286, y: 0.17, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -615,11 +615,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2474536587818443299, guid: bc36fe8a7e2814847b494b5b7d5e9bb6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.02
+      value: -0.09
       objectReference: {fileID: 0}
     - target: {fileID: 2474536587818443299, guid: bc36fe8a7e2814847b494b5b7d5e9bb6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.75
+      value: 1.59
       objectReference: {fileID: 0}
     - target: {fileID: 2474536587818443299, guid: bc36fe8a7e2814847b494b5b7d5e9bb6, type: 3}
       propertyPath: m_LocalPosition.z
@@ -653,21 +653,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7739704637615861026, guid: bc36fe8a7e2814847b494b5b7d5e9bb6, type: 3}
-      propertyPath: jumpingPower
-      value: 24
-      objectReference: {fileID: 0}
     - target: {fileID: 8200594937283117494, guid: bc36fe8a7e2814847b494b5b7d5e9bb6, type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 9151450126944761856, guid: bc36fe8a7e2814847b494b5b7d5e9bb6, type: 3}
-      propertyPath: m_BodyType
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9151450126944761856, guid: bc36fe8a7e2814847b494b5b7d5e9bb6, type: 3}
-      propertyPath: m_Simulated
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9151450126944761856, guid: bc36fe8a7e2814847b494b5b7d5e9bb6, type: 3}
       propertyPath: m_AngularDrag
