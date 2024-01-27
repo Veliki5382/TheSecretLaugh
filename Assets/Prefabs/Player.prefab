@@ -42,13 +42,14 @@ GameObject:
   - component: {fileID: 4396762016071242393}
   - component: {fileID: 320423070437438905}
   - component: {fileID: 3327855632649227072}
+  - component: {fileID: 5819053915967245853}
   m_Layer: 0
   m_Name: Pero
   m_TagString: Pero
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &4396762016071242393
 Transform:
   m_ObjectHideFlags: 0
@@ -58,8 +59,8 @@ Transform:
   m_GameObject: {fileID: 4369268913441564182}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.58, y: 0.09, z: -0.085688815}
-  m_LocalScale: {x: -4.110506, y: 1.292, z: 1}
+  m_LocalPosition: {x: -3.6, y: -0.1, z: -0.085688815}
+  m_LocalScale: {x: -0.9144328, y: 0.99626124, z: 0.7711}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2474536587818443299}
@@ -107,7 +108,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 3625043607559282579, guid: 19fb86013d8c24d6cb8410c0aadf30fa, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 1, y: 1}
@@ -160,11 +161,38 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0, y: 0.25}
-      - {x: -0.5, y: 0}
-      - {x: 0, y: -0.25}
-      - {x: 0.5, y: 0}
+    - - {x: 2.9221797, y: 2.1837153}
+      - {x: 1.2073007, y: 1.9550389}
+      - {x: -1.8606812, y: 1.3765844}
+      - {x: -2.0274258, y: 0.78596544}
+      - {x: -3.169624, y: 0.30790004}
+      - {x: -1.9477105, y: -0.63443273}
+      - {x: -1.740581, y: -1.0863444}
+      - {x: -0.15552603, y: -1.5743082}
+      - {x: 2.9767442, y: -2.404787}
+      - {x: 3.0294366, y: -0.117186144}
   m_UseDelaunayMesh: 0
+--- !u!95 &5819053915967245853
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4369268913441564182}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1b059b13a76700e45be03b8125267d0f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &5216903304920261526
 GameObject:
   m_ObjectHideFlags: 0
@@ -375,6 +403,14 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 8a523535-b716-47bd-826f-1e6f38a8b4d9
     m_ActionName: Player/Pero[/Keyboard/f,/Mouse/press]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: aaef8d27-4d41-424a-9eeb-d33464bf7e93
+    m_ActionName: Player/Nisan[/Mouse/rightButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 0dac9a4d-0d27-4985-a4e2-7728cae28956
+    m_ActionName: Player/Bang[/Keyboard/enter]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
