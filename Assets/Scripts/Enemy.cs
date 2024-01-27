@@ -83,6 +83,7 @@ public class Enemy : MonoBehaviour
             Nisan.nisanPosition = transform.position;
             if (Input.GetKey(KeyCode.Mouse0))
             {
+                Groblje.Umri();
                 Destroy(gameObject);
                 Nisan.target--;
                 Player.haosLom = Player.haosMax;
