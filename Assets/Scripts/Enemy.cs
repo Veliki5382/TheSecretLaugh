@@ -22,10 +22,14 @@ public class Enemy : MonoBehaviour
 	private int eyeNumber;
 	private int hatNumber;
 	private float horizontal;
+    public AudioClip laughSfx;
+
+    private AudioSource aurdio;
+    private float horizontal;
     private bool isJumping;
     private float jumpCDmax;
     private float jumpCD;
-    private bool isFacingRight; 
+    private bool isFacingRight;
     private float flipCD;
     private float flipCDmax;
     private bool nanisanljen = false;
@@ -34,6 +38,7 @@ public class Enemy : MonoBehaviour
 
     void Start()
     {
+        aurdio = GetComponent<AudioSource>();
         horizontal = 1f;
         jumpCD= 0f;
         flipCD= 0f;
@@ -46,7 +51,7 @@ public class Enemy : MonoBehaviour
 		RandomCombination();
 
     }
-    
+
 void RandomCombination()
 	{
 		smileNumber = Random.Range(1, n);
@@ -56,7 +61,7 @@ void RandomCombination()
 
         enemyCombination = new bool[n * n * n * n + 2];
 
-        if (enemyCombination[smileNumber * n * n * n + colorNumber * n * n + eyeNumber * n + hatNumber] == true) 
+        if (enemyCombination[smileNumber * n * n * n + colorNumber * n * n + eyeNumber * n + hatNumber] == true)
 		{
 			RandomCombination();
 			return;
@@ -64,7 +69,7 @@ void RandomCombination()
 		else
 		{
 			enemyCombination[smileNumber * n * n * n + colorNumber * n * n + eyeNumber * n + hatNumber] = true;
-            
+
             smile.GetComponent<SpriteRenderer>().sprite = smileSprite[smileNumber - 1];
 		}
 	}
@@ -120,13 +125,14 @@ void RandomCombination()
             Nisan.nisanPosition = transform.position;
             if (Input.GetKey(KeyCode.Mouse0))
             {
+                Groblje.Umri();
                 Destroy(gameObject);
                 Nisan.target--;
                 Player.haosLom = Player.haosMax;
                 print(Nisan.target);
             }
         }
-        
+
     }
 
     private bool IsGrounded()
@@ -163,6 +169,7 @@ void RandomCombination()
         if (collision.gameObject.CompareTag("Pero"))
         {
             //smej se
+            aurdio.PlayOneShot(laughSfx);
         }
     }
 }
