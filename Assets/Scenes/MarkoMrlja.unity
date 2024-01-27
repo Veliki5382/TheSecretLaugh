@@ -4055,6 +4055,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1240320101938577627, guid: f2a3641324f32274084a99789ad0e950, type: 3}
+      propertyPath: audio
+      value: 
+      objectReference: {fileID: 74037261}
+    - target: {fileID: 1240320101938577627, guid: f2a3641324f32274084a99789ad0e950, type: 3}
+      propertyPath: cockSfx
+      value: 
+      objectReference: {fileID: 8300000, guid: 42c758a327e74db48aa827b0bb3e822c, type: 3}
+    - target: {fileID: 1240320101938577627, guid: f2a3641324f32274084a99789ad0e950, type: 3}
+      propertyPath: shootSfx
+      value: 
+      objectReference: {fileID: 8300000, guid: 4dd6ea28713c6d046ac7da42a3e7976b, type: 3}
+    - target: {fileID: 1240320101938577627, guid: f2a3641324f32274084a99789ad0e950, type: 3}
+      propertyPath: holsterSfx
+      value: 
+      objectReference: {fileID: 8300000, guid: e6180a4fb25bd64429eb88839a24614b, type: 3}
     - target: {fileID: 2081156037767153433, guid: f2a3641324f32274084a99789ad0e950, type: 3}
       propertyPath: m_Name
       value: Nisan
@@ -4221,6 +4237,63 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 278bd1eb0995a1442b3cc58bf9879d5f, type: 3}
+--- !u!1001 &197483641685852119
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2112293204697941760, guid: 39603c16c77f90548a3d81d2a2b40058, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2112293204697941760, guid: 39603c16c77f90548a3d81d2a2b40058, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2112293204697941760, guid: 39603c16c77f90548a3d81d2a2b40058, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2112293204697941760, guid: 39603c16c77f90548a3d81d2a2b40058, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2112293204697941760, guid: 39603c16c77f90548a3d81d2a2b40058, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2112293204697941760, guid: 39603c16c77f90548a3d81d2a2b40058, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2112293204697941760, guid: 39603c16c77f90548a3d81d2a2b40058, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2112293204697941760, guid: 39603c16c77f90548a3d81d2a2b40058, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2112293204697941760, guid: 39603c16c77f90548a3d81d2a2b40058, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2112293204697941760, guid: 39603c16c77f90548a3d81d2a2b40058, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4770852786043694161, guid: 39603c16c77f90548a3d81d2a2b40058, type: 3}
+      propertyPath: m_Name
+      value: Groblje
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 39603c16c77f90548a3d81d2a2b40058, type: 3}
 --- !u!1001 &7012386150556760204
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4370,3 +4443,4 @@ SceneRoots:
   - {fileID: 1211655741}
   - {fileID: 758896375}
   - {fileID: 1912596501}
+  - {fileID: 197483641685852119}

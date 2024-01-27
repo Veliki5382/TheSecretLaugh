@@ -245,7 +245,7 @@ MonoBehaviour:
   ms: 3
   colider: {fileID: 3645866574619295159}
   sr: {fileID: 8926116512738540095}
-  groblje: {fileID: 7139630631948668254, guid: 39603c16c77f90548a3d81d2a2b40058, type: 3}
+  laughSfx: {fileID: 8300000, guid: 6915b9a0f2993bf45bcc3c92ced40c3d, type: 3}
 --- !u!82 &4260717872882597473
 AudioSource:
   m_ObjectHideFlags: 0
@@ -257,7 +257,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0

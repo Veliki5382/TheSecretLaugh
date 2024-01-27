@@ -13,7 +13,9 @@ public class Enemy : MonoBehaviour
     public float ms = 8f;
     public Collider2D colider;
     public SpriteRenderer sr;
+    public AudioClip laughSfx;
 
+    private AudioSource aurdio;
     private float horizontal;
     private bool isJumping;
     private float jumpCDmax;
@@ -25,6 +27,7 @@ public class Enemy : MonoBehaviour
 
     void Start()
     {
+        aurdio = GetComponent<AudioSource>();
         horizontal = 1f;
         jumpCD= 0f;
         flipCD= 0f;
@@ -127,6 +130,7 @@ public class Enemy : MonoBehaviour
         if (collision.gameObject.tag == "Pero")
         {
             //smej se
+            aurdio.PlayOneShot(laughSfx);
         }
     }
 }
