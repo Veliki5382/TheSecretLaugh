@@ -25,7 +25,6 @@ public class Enemy : MonoBehaviour
     public AudioClip laughSfx;
 
     private AudioSource aurdio;
-    private float horizontal;
     private bool isJumping;
     private float jumpCDmax;
     private float jumpCD;
