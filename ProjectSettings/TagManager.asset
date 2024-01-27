@@ -5,8 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Enemy
-  - MovingPlatformTrigger
-  - MovingPlatform
+  - Wall
   layers:
   - Default
   - TransparentFX
@@ -17,8 +16,8 @@ TagManager:
   - Ground
   - Player
   - Enemy
-  - 
-  - 
+  - Wall
+  - Enemy2
   - 
   - 
   - 

@@ -17,6 +17,7 @@ public class Enemy : MonoBehaviour
     private bool isJumping;
     private float jumpCDmax;
     private float jumpCD;
+    private bool isFacingRight;
 
     void Start()
     {
@@ -28,8 +29,14 @@ public class Enemy : MonoBehaviour
     void FixedUpdate()
     {
         rb.velocity = new Vector2(horizontal * ms, rb.velocity.y);
-        if (rb.velocity.y > 0) colider.isTrigger = true;
-        else colider.isTrigger = false;
+        if (rb.velocity.y > 0) 
+        {
+            gameObject.layer = 10;
+        }
+        else
+        {
+            gameObject.layer = 8;
+        }
         jumpCD += Time.fixedDeltaTime;
         if (jumpCD >= jumpCDmax)
         {
@@ -37,6 +44,9 @@ public class Enemy : MonoBehaviour
             jumpCD = 0;
             jumpCDmax= Random.Range(2, 6);
         }
+        if (!isFacingRight && horizontal > 0f) Flip();
+        else if(isFacingRight && horizontal <0f) Flip();
+        
     }
 
     private bool IsGrounded()
@@ -49,6 +59,22 @@ public class Enemy : MonoBehaviour
         if (IsGrounded())
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
+        }
+    }
+
+    private void Flip()
+    {
+        isFacingRight = !isFacingRight;
+        Vector3 localScale= transform.localScale;
+        localScale.x *= -1;
+        transform.localScale = localScale;
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Wall")
+        {
+            horizontal *= -1;
         }
     }
 }
