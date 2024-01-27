@@ -228,7 +228,7 @@ void RandomCombination()
         if (collision.gameObject.CompareTag("Pero"))
         {
             //smej se
-            aurdio.PlayOneShot(laughSfx);
+            aurdio.PlayOneShot(laughSfx, 0.2f);
         }
     }
 }
