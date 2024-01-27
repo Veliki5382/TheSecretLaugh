@@ -442,16 +442,16 @@ MonoBehaviour:
   - {fileID: 454955726, guid: 8215448c6e7420b4ebf0875e4b8da258, type: 3}
   - {fileID: -730063198, guid: 8215448c6e7420b4ebf0875e4b8da258, type: 3}
   hatSprite:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: -1732763577, guid: cfa3e8cd7e4579c4c8e69eeac52da35a, type: 3}
+  - {fileID: 1137294108, guid: cfa3e8cd7e4579c4c8e69eeac52da35a, type: 3}
+  - {fileID: -949716241, guid: cfa3e8cd7e4579c4c8e69eeac52da35a, type: 3}
+  - {fileID: -2139204108, guid: cfa3e8cd7e4579c4c8e69eeac52da35a, type: 3}
+  - {fileID: 1750923631, guid: cfa3e8cd7e4579c4c8e69eeac52da35a, type: 3}
+  - {fileID: -1778304805, guid: cfa3e8cd7e4579c4c8e69eeac52da35a, type: 3}
+  - {fileID: -732584045, guid: cfa3e8cd7e4579c4c8e69eeac52da35a, type: 3}
+  - {fileID: 339835858, guid: cfa3e8cd7e4579c4c8e69eeac52da35a, type: 3}
+  - {fileID: -966545160, guid: cfa3e8cd7e4579c4c8e69eeac52da35a, type: 3}
+  - {fileID: -1561689719, guid: cfa3e8cd7e4579c4c8e69eeac52da35a, type: 3}
   soundSprite:
   - {fileID: 8300000, guid: 253f3459789cf1d41bde0aad6c2e2960, type: 3}
   - {fileID: 8300000, guid: 20f87f2f63fc1d84f825fb897956c320, type: 3}
@@ -467,8 +467,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: b6466b6abf1a4ac4e8688cd50c57bc9a, type: 3}
   - {fileID: 8300000, guid: 93d4827914316564a9ff4da439d72d99, type: 3}
   smileOffset: {x: 0, y: -0.3, z: -1}
-  eyeOffset: {x: 0, y: 0.5, z: -1}
-  hatOffset: {x: 0, y: 2.08, z: -1}
+  eyeOffset: {x: 0, y: 0.4, z: -1}
+  hatOffset: {x: 0, y: 1.2, z: -1}
   LeftLeg: {fileID: 6325543530883791773}
   RightLeg: {fileID: 3578466540494324310}
   n: 4
