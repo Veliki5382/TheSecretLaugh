@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class Spring : MonoBehaviour
 {
-    public Rigidbody2D rbPlayer;
-    public Rigidbody2D rbEnemy;
     public float jumpingPower = 48f;
     // Start is called before the first frame update
     void Start()
@@ -21,9 +19,9 @@ public class Spring : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.attachedRigidbody == rbEnemy)
-            rbEnemy.velocity = new Vector2(rbEnemy.velocity.x, jumpingPower);
-        else
-            rbPlayer.velocity = new Vector2(rbPlayer.velocity.x, jumpingPower);
+        if(collision.tag == "Enemy")
+            collision.attachedRigidbody.velocity = new Vector2(collision.attachedRigidbody.velocity.x, jumpingPower);
+        if(collision.tag == "Player")
+            collision.attachedRigidbody.velocity = new Vector2(collision.attachedRigidbody.velocity.x, jumpingPower);
     }
 }
