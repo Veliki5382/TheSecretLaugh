@@ -7,11 +7,12 @@ public class TimeText : MonoBehaviour
     public TextMeshProUGUI timescoretext;
     void Start()
     {
-        timescoretext.text = $"TIME: {Player.time}";
+        
     }
 
     private void FixedUpdate()
     {
+        timescoretext.text = $"TIME: {Mathf.Round(Player.time)} s";
         if (Player.time <= 10)
         {
             //ckck zvuk

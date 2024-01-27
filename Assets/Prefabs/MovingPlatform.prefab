@@ -145,5 +145,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   range: 5
   direction: -1
-  ms: 1.5
+  ms: 3
   smoothTime: 0.3
