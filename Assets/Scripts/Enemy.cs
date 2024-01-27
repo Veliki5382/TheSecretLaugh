@@ -85,6 +85,7 @@ public class Enemy : MonoBehaviour
             {
                 Destroy(gameObject);
                 Nisan.target--;
+                Player.haosLom = Player.haosMax;
                 print(Nisan.target);
             }
         }
