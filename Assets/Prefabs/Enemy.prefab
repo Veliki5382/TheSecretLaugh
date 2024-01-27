@@ -281,10 +281,25 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  soundSprite:
+  - {fileID: 8300000, guid: 253f3459789cf1d41bde0aad6c2e2960, type: 3}
+  - {fileID: 8300000, guid: 20f87f2f63fc1d84f825fb897956c320, type: 3}
+  - {fileID: 8300000, guid: 1a3adfc0003f79949b78498672a384d5, type: 3}
+  - {fileID: 8300000, guid: 6437eaab9a9123345aa8cc26bbf2b2f6, type: 3}
+  - {fileID: 8300000, guid: 47a8ee53160a45043ae2c85d5490c3df, type: 3}
+  - {fileID: 8300000, guid: b5210210edd54c44c8edf5de7d82641e, type: 3}
+  - {fileID: 8300000, guid: 340ad31c79340ff4d879dd0cb4b5da0e, type: 3}
+  - {fileID: 8300000, guid: 98b8bdb0a5014a24f840bc7b5747f09a, type: 3}
+  - {fileID: 8300000, guid: 6915b9a0f2993bf45bcc3c92ced40c3d, type: 3}
+  - {fileID: 8300000, guid: ae1b99b017201d14bb91d84e81ece3d3, type: 3}
+  - {fileID: 8300000, guid: 05961f417ca52f14581acbf5b8d2514b, type: 3}
+  - {fileID: 8300000, guid: b6466b6abf1a4ac4e8688cd50c57bc9a, type: 3}
+  - {fileID: 8300000, guid: 93d4827914316564a9ff4da439d72d99, type: 3}
   smileOffset: {x: 0, y: -0.3, z: -1}
   eyeOffset: {x: 0, y: 0.5, z: -1}
   hatOffset: {x: 0, y: 2.08, z: -1}
   n: 4
+  m: 0
   laughSfx: {fileID: 0}
 --- !u!82 &4260717872882597473
 AudioSource:
