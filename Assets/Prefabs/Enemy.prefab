@@ -241,6 +241,6 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
-  ms: 4
+  ms: 3
   colider: {fileID: 3645866574619295159}
-  CD: 2
+  sr: {fileID: 8926116512738540095}

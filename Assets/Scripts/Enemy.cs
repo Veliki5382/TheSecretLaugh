@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -11,6 +12,7 @@ public class Enemy : MonoBehaviour
     public LayerMask groundLayer;
     public float ms = 8f;
     public Collider2D colider;
+    public SpriteRenderer sr;
 
     private float horizontal;
     private bool isJumping;
@@ -19,6 +21,7 @@ public class Enemy : MonoBehaviour
     private bool isFacingRight; 
     private float flipCD;
     private float flipCDmax;
+    private bool nanisanljen = false;
 
     void Start()
     {
@@ -31,7 +34,7 @@ public class Enemy : MonoBehaviour
 
     void FixedUpdate()
     {
-        rb.velocity = new Vector2(horizontal * ms, rb.velocity.y);
+        rb.velocity = new Vector2(horizontal * ms * Player.haosLom, rb.velocity.y);
         if (rb.velocity.y > 0) gameObject.layer = 10;
         else gameObject.layer = 8;
         jumpCD += Time.fixedDeltaTime;
@@ -50,6 +53,41 @@ public class Enemy : MonoBehaviour
         }
         if (!isFacingRight && horizontal > 0f) Flip();
         else if(isFacingRight && horizontal <0f) Flip();
+
+        if (Mathf.Abs(Nisan.mousePosition.x - transform.position.x) <= 0.5 && Mathf.Abs(Nisan.mousePosition.y - transform.position.y) <= 0.5)
+        {
+            //zasvetli enemya
+            sr.color = Color.magenta;
+            if (Input.GetKey(KeyCode.Mouse1) && !nanisanljen)
+            {
+                nanisanljen = true;
+                Nisan.target++;
+                print(Nisan.target);
+            }
+        }
+        else
+        {
+            sr.color= Color.red;
+            if (Input.GetKey(KeyCode.Mouse1))
+            {
+                if (nanisanljen)
+                {
+                    nanisanljen = false;
+                    Nisan.target--;
+                }
+                print(Nisan.target);
+            }
+        }
+        if (nanisanljen)
+        {
+            Nisan.nisanPosition = transform.position;
+            if (Input.GetKey(KeyCode.Mouse0))
+            {
+                Destroy(gameObject);
+                Nisan.target--;
+                print(Nisan.target);
+            }
+        }
         
     }
 
@@ -79,6 +117,14 @@ public class Enemy : MonoBehaviour
         if (collision.gameObject.tag == "Wall" || collision.gameObject.tag == "Enemy")
         {
             horizontal *= -1;
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Pero")
+        {
+            //smej se
         }
     }
 }

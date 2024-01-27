@@ -7,6 +7,9 @@ using UnityEngine.UIElements;
 
 public class Player : MonoBehaviour
 {
+    public static float haosLom;
+    public static float haosMax;
+
     public Rigidbody2D rb;
     public Transform groundCheckLeft;
     public Transform groundCheckRight;
@@ -23,7 +26,8 @@ public class Player : MonoBehaviour
 
     void Start()
     {
-
+        haosLom = 1;
+        haosMax = 3;
     }
 
     void FixedUpdate()
@@ -37,6 +41,17 @@ public class Player : MonoBehaviour
         else Physics2D.IgnoreLayerCollision(6, 7, false);
         if (!isFacingRight && horizontal > 0f) Flip();
         else if (isFacingRight && horizontal < 0f) Flip();
+        if (pero.gameObject.activeSelf)
+        {
+            haosLom += 2*Time.fixedDeltaTime;
+            haosLom = Mathf.Min(haosLom, haosMax);
+        }
+        else
+        {
+            haosLom -= Time.fixedDeltaTime;
+            haosLom= Mathf.Max(haosLom, 1);
+        }
+        
     }
 
     private bool IsGrounded()
@@ -82,5 +97,4 @@ public class Player : MonoBehaviour
         localScale.x *= -1;
         transform.localScale = localScale;
     }
-
 }
