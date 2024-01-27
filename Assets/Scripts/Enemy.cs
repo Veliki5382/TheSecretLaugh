@@ -95,7 +95,7 @@ void RandomCombination()
         if (!isFacingRight && horizontal > 0f) Flip();
         else if(isFacingRight && horizontal <0f) Flip();
 
-        if (Mathf.Abs(Nisan.mousePosition.x - transform.position.x) <= 0.5 && Mathf.Abs(Nisan.mousePosition.y - transform.position.y) <= 0.5)
+        if (Mathf.Abs(Nisan.mousePosition.x - transform.position.x) <= 1 && Mathf.Abs(Nisan.mousePosition.y - transform.position.y) <= 1)
         {
             //zasvetli enemya
             sr.color = Color.magenta;
