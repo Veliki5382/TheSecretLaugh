@@ -14,6 +14,7 @@ public class Player : MonoBehaviour
     public float ms = 8f;
     public float jumpingPower = 16f;
     public Collider2D colider;
+    public GameObject pero;
 
     private float horizontal;
     private float groundedCD;
@@ -60,6 +61,18 @@ public class Player : MonoBehaviour
         if(context.canceled && rb.velocity.y > 0f)
         {
             rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
+        }
+    }
+
+    public void VadiPero(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            pero.gameObject.SetActive(true);
+        }
+        else
+        {
+            pero.gameObject.SetActive(false);
         }
     }
     private void Flip()

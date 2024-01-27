@@ -25,8 +25,8 @@ public class Enemy : MonoBehaviour
         horizontal = 1f;
         jumpCD= 0f;
         flipCD= 0f;
-        jumpCDmax = Random.Range(2,6);
-        flipCDmax = Random.Range(2,6);
+        jumpCDmax = Random.Range(2,4);
+        flipCDmax = Random.Range(2,4);
     }
 
     void FixedUpdate()
@@ -40,13 +40,13 @@ public class Enemy : MonoBehaviour
         {
             Jump(Random.Range(15,25));
             jumpCD = 0;
-            jumpCDmax= Random.Range(2, 6);
+            jumpCDmax= Random.Range(2, 4);
         }
         if (flipCD >= flipCDmax)
         {
             horizontal *= -1;
             flipCD = 0;
-            flipCDmax = Random.Range(2, 6);
+            flipCDmax = Random.Range(2, 4);
         }
         if (!isFacingRight && horizontal > 0f) Flip();
         else if(isFacingRight && horizontal <0f) Flip();
