@@ -54,8 +54,6 @@ public class Player : MonoBehaviour
             haosLom -= Time.fixedDeltaTime;
             haosLom= Mathf.Max(haosLom, 1);
         }
-        if (Input.GetKeyDown("space") && IsGrounded())
-            aurdio.Play();
     }
 
     private bool IsGrounded()
@@ -74,6 +72,7 @@ public class Player : MonoBehaviour
     {
         if(context.performed && canJump)
         {
+            aurdio.Play();
             rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
         }
 
