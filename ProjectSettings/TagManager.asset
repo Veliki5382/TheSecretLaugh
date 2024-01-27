@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Enemy
   - Wall
+  - MovingPlatform
+  - Pero
   layers:
   - Default
   - TransparentFX

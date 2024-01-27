@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 3327855632649227072}
   m_Layer: 0
   m_Name: Pero
-  m_TagString: Untagged
+  m_TagString: Pero
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
