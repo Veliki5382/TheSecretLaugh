@@ -24,6 +24,8 @@ public class Enemy : MonoBehaviour
     public Vector3 smileOffset;
     public Vector3 eyeOffset;
     public Vector3 hatOffset;
+    public GameObject LeftLeg;
+    public GameObject RightLeg;
 
 	[SerializeField] private int n;
     private int smileNumber;
@@ -63,7 +65,8 @@ public class Enemy : MonoBehaviour
 
 		n = 10;
 		RandomCombination();
-
+        LeftLeg.GetComponent<SpriteRenderer>().color = enemyColor;
+        RightLeg.GetComponent<SpriteRenderer>().color = enemyColor;
     }
 
 void RandomCombination()
