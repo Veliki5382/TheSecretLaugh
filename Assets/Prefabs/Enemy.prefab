@@ -244,3 +244,16 @@ MonoBehaviour:
   ms: 3
   colider: {fileID: 3645866574619295159}
   sr: {fileID: 8926116512738540095}
+  smile: {fileID: 8585443319073504790, guid: 28297f9b5d301b04f956cdd6b7920a78, type: 3}
+  smileSprite:
+  - {fileID: 43587018, guid: a1eb3f7720114bb46a226fa0e6a223be, type: 3}
+  - {fileID: 2100757994, guid: a1eb3f7720114bb46a226fa0e6a223be, type: 3}
+  - {fileID: -137335186, guid: a1eb3f7720114bb46a226fa0e6a223be, type: 3}
+  - {fileID: 285395187, guid: a1eb3f7720114bb46a226fa0e6a223be, type: 3}
+  - {fileID: 285395187, guid: a1eb3f7720114bb46a226fa0e6a223be, type: 3}
+  - {fileID: 285395187, guid: a1eb3f7720114bb46a226fa0e6a223be, type: 3}
+  - {fileID: 285395187, guid: a1eb3f7720114bb46a226fa0e6a223be, type: 3}
+  - {fileID: 285395187, guid: a1eb3f7720114bb46a226fa0e6a223be, type: 3}
+  - {fileID: 285395187, guid: a1eb3f7720114bb46a226fa0e6a223be, type: 3}
+  - {fileID: 285395187, guid: a1eb3f7720114bb46a226fa0e6a223be, type: 3}
+  n: 4
