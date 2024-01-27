@@ -1752,6 +1752,10 @@ PrefabInstance:
       value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 7739704637615861026, guid: bc36fe8a7e2814847b494b5b7d5e9bb6, type: 3}
+      propertyPath: jumpAudio
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7739704637615861026, guid: bc36fe8a7e2814847b494b5b7d5e9bb6, type: 3}
       propertyPath: groundLayer.m_Bits
       value: 64
       objectReference: {fileID: 0}
@@ -2594,19 +2598,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1581976083313203642, guid: 203c3b0f71396fd4296ff2a0f81d5265, type: 3}
       propertyPath: m_LocalScale.x
-      value: 17.5725
+      value: 14.574787
       objectReference: {fileID: 0}
     - target: {fileID: 1581976083313203642, guid: 203c3b0f71396fd4296ff2a0f81d5265, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.64014494
+      value: 0.58500654
       objectReference: {fileID: 0}
     - target: {fileID: 1581976083313203642, guid: 203c3b0f71396fd4296ff2a0f81d5265, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.65
+      value: -3.6776
       objectReference: {fileID: 0}
     - target: {fileID: 1581976083313203642, guid: 203c3b0f71396fd4296ff2a0f81d5265, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 14.1979
+      value: 12.6992
       objectReference: {fileID: 0}
     - target: {fileID: 1581976083313203642, guid: 203c3b0f71396fd4296ff2a0f81d5265, type: 3}
       propertyPath: m_LocalPosition.z
