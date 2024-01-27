@@ -22,6 +22,7 @@ public class Player : MonoBehaviour
     public GameObject pero;
     public AudioClip jumpSfx;
     public GameObject pistolj;
+    public Animator animator;
 
     private float horizontal;
     private float groundedCD;
@@ -54,6 +55,8 @@ public class Player : MonoBehaviour
         else Physics2D.IgnoreLayerCollision(6, 7, false);
         if (!isFacingRight && horizontal > 0f) Flip();
         else if (isFacingRight && horizontal < 0f) Flip();
+        if (horizontal == 0) animator.Play("PLayerIdleStv");
+        else animator.Play("PlayerIdle");
         if (pero.gameObject.activeSelf)
         {
             haosLom += Time.fixedDeltaTime;
