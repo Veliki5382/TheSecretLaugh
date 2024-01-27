@@ -40,7 +40,6 @@ public class Player : MonoBehaviour
 
     void FixedUpdate()
     {
-        print(time);
         time -= Time.fixedDeltaTime;
         if (time < 0)
         {

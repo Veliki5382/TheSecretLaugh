@@ -108,7 +108,7 @@ void RandomCombination()
 
     static int idx = 0;
 
-    static Vector2 FicaFunkcija()
+    public static Vector2 FicaFunkcija()
     {
         while (killCombination[idx/m, idx%n] == false){idx += 11; idx %= n * m;}
         idx += 11; idx %= n * m;
