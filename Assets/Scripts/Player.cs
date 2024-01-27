@@ -9,6 +9,8 @@ public class Player : MonoBehaviour
 {
     public static float haosLom;
     public static float haosMax;
+    public static float time;
+    public static float score;
 
     public Rigidbody2D rb;
     public Transform groundCheckLeft;
@@ -30,7 +32,7 @@ public class Player : MonoBehaviour
     {
         aurdio = GetComponent<AudioSource>();
         haosLom = 1;
-        haosMax = 3;
+        haosMax = 4;
     }
 
     void FixedUpdate()
@@ -46,12 +48,12 @@ public class Player : MonoBehaviour
         else if (isFacingRight && horizontal < 0f) Flip();
         if (pero.gameObject.activeSelf)
         {
-            haosLom += 2*Time.fixedDeltaTime;
+            haosLom += Time.fixedDeltaTime;
             haosLom = Mathf.Min(haosLom, haosMax);
         }
         else
         {
-            haosLom -= Time.fixedDeltaTime;
+            haosLom -= Time.fixedDeltaTime/2;
             haosLom= Mathf.Max(haosLom, 1);
         }
     }
