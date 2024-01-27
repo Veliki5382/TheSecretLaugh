@@ -1913,6 +1913,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 8436703251791882418, guid: bc36fe8a7e2814847b494b5b7d5e9bb6, type: 3}
+      propertyPath: m_Color.b
+      value: 0.19188643
+      objectReference: {fileID: 0}
+    - target: {fileID: 8436703251791882418, guid: bc36fe8a7e2814847b494b5b7d5e9bb6, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8436703251791882418, guid: bc36fe8a7e2814847b494b5b7d5e9bb6, type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
