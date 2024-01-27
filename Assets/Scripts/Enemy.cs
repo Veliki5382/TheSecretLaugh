@@ -86,6 +86,7 @@ public class Enemy : MonoBehaviour
             Nisan.nisanPosition = transform.position;
             if (Input.GetKey(KeyCode.Mouse0))
             {
+                Splat.Kill(transform);
                 Groblje.Umri();
                 Destroy(gameObject);
                 Nisan.target--;
