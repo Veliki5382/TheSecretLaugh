@@ -234,8 +234,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 14616c07b67f4db47bd7c30a5b048df9, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   rb: {fileID: 4215006238736627713}
   groundCheckLeft: {fileID: 5920731796379219858}
   groundCheckRight: {fileID: 4720584768555678419}
@@ -246,19 +246,46 @@ MonoBehaviour:
   colider: {fileID: 3645866574619295159}
   sr: {fileID: 8926116512738540095}
   smile: {fileID: 8585443319073504790, guid: 28297f9b5d301b04f956cdd6b7920a78, type: 3}
+  eye: {fileID: 8585443319073504790, guid: bd84ec125c673d04587dd3749165200d, type: 3}
+  hat: {fileID: 8585443319073504790, guid: 85299c0c09c54e1439db6b60a1a55564, type: 3}
   smileSprite:
-  - {fileID: 43587018, guid: a1eb3f7720114bb46a226fa0e6a223be, type: 3}
-  - {fileID: 2100757994, guid: a1eb3f7720114bb46a226fa0e6a223be, type: 3}
-  - {fileID: -137335186, guid: a1eb3f7720114bb46a226fa0e6a223be, type: 3}
-  - {fileID: 285395187, guid: a1eb3f7720114bb46a226fa0e6a223be, type: 3}
-  - {fileID: 285395187, guid: a1eb3f7720114bb46a226fa0e6a223be, type: 3}
-  - {fileID: 285395187, guid: a1eb3f7720114bb46a226fa0e6a223be, type: 3}
-  - {fileID: 285395187, guid: a1eb3f7720114bb46a226fa0e6a223be, type: 3}
-  - {fileID: 285395187, guid: a1eb3f7720114bb46a226fa0e6a223be, type: 3}
-  - {fileID: 285395187, guid: a1eb3f7720114bb46a226fa0e6a223be, type: 3}
-  - {fileID: 285395187, guid: a1eb3f7720114bb46a226fa0e6a223be, type: 3}
+  - {fileID: 1126508655, guid: ef50364527a4e3d4888971e6fcfb974c, type: 3}
+  - {fileID: -225428199, guid: ef50364527a4e3d4888971e6fcfb974c, type: 3}
+  - {fileID: -1766441527, guid: ef50364527a4e3d4888971e6fcfb974c, type: 3}
+  - {fileID: 574510434, guid: ef50364527a4e3d4888971e6fcfb974c, type: 3}
+  - {fileID: -1032014975, guid: ef50364527a4e3d4888971e6fcfb974c, type: 3}
+  - {fileID: 1402967529, guid: ef50364527a4e3d4888971e6fcfb974c, type: 3}
+  - {fileID: 1200804422, guid: ef50364527a4e3d4888971e6fcfb974c, type: 3}
+  - {fileID: 2126022239, guid: ef50364527a4e3d4888971e6fcfb974c, type: 3}
+  - {fileID: -1435475141, guid: ef50364527a4e3d4888971e6fcfb974c, type: 3}
+  - {fileID: -333543960, guid: ef50364527a4e3d4888971e6fcfb974c, type: 3}
+  eyeSprite:
+  - {fileID: 984027255, guid: 8215448c6e7420b4ebf0875e4b8da258, type: 3}
+  - {fileID: 22509525, guid: 8215448c6e7420b4ebf0875e4b8da258, type: 3}
+  - {fileID: -1966555048, guid: 8215448c6e7420b4ebf0875e4b8da258, type: 3}
+  - {fileID: 1326271425, guid: 8215448c6e7420b4ebf0875e4b8da258, type: 3}
+  - {fileID: 22342309, guid: 8215448c6e7420b4ebf0875e4b8da258, type: 3}
+  - {fileID: 372793079, guid: 8215448c6e7420b4ebf0875e4b8da258, type: 3}
+  - {fileID: -493320885, guid: 8215448c6e7420b4ebf0875e4b8da258, type: 3}
+  - {fileID: 1679508875, guid: 8215448c6e7420b4ebf0875e4b8da258, type: 3}
+  - {fileID: 454955726, guid: 8215448c6e7420b4ebf0875e4b8da258, type: 3}
+  - {fileID: -730063198, guid: 8215448c6e7420b4ebf0875e4b8da258, type: 3}
+  hatSprite:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  smileOffset: {x: 0, y: -0.3, z: -1}
+  eyeOffset: {x: 0, y: 0.5, z: -1}
+  hatOffset: {x: 0, y: 2.08, z: -1}
   n: 4
-  laughSfx: {fileID: 8300000, guid: 6915b9a0f2993bf45bcc3c92ced40c3d, type: 3}
+  laughSfx: {fileID: 0}
 --- !u!82 &4260717872882597473
 AudioSource:
   m_ObjectHideFlags: 0

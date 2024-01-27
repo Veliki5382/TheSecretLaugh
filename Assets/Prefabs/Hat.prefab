@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7550568457399599552}
   - component: {fileID: 1504916302425969805}
   m_Layer: 0
-  m_Name: Smile
+  m_Name: Hat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

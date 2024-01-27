@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -14,18 +15,26 @@ public class Enemy : MonoBehaviour
     public Collider2D colider;
     public SpriteRenderer sr;
     public GameObject smile;
-    public Sprite[] smileSprite;
+	public GameObject eye;
+	public GameObject hat;
+	//public GameObject smile1;
+	public Sprite[] smileSprite;
+	public Sprite[] eyeSprite;
+	public Sprite[] hatSprite;
+    public Vector3 smileOffset;
+    public Vector3 eyeOffset;
+    public Vector3 hatOffset;
 
-    [SerializeField] private int n;
+	[SerializeField] private int n;
     private int smileNumber;
 	private int colorNumber;
 	private int eyeNumber;
 	private int hatNumber;
+    private Color enemyColor;
 	private float horizontal;
     public AudioClip laughSfx;
 
     private AudioSource aurdio;
-    private float horizontal;
     private bool isJumping;
     private float jumpCDmax;
     private float jumpCD;
@@ -45,7 +54,12 @@ public class Enemy : MonoBehaviour
         jumpCDmax = Random.Range(2,4);
         flipCDmax = Random.Range(2,4);
 
-        Instantiate(smile, transform.position, Quaternion.identity);
+        smile = Instantiate(smile, transform.position, Quaternion.identity);
+        smile.transform.position = transform.position + smileOffset;
+        eye = Instantiate(eye, transform.position, Quaternion.identity);
+        eye.transform.position = transform.position + eyeOffset;
+        hat = Instantiate(hat, transform.position, Quaternion.identity);
+        hat.transform.position = transform.position + hatOffset;
 
 		n = 10;
 		RandomCombination();
@@ -58,6 +72,8 @@ void RandomCombination()
 		colorNumber = Random.Range(1, n);
 		eyeNumber = Random.Range(1, n);
 		hatNumber = Random.Range(1, n);
+        enemyColor = new Color(Random.Range(0f, 1f), Random.Range(0f, 1f), Random.Range(0f, 1f));
+        GetComponent<SpriteRenderer>().material.color = enemyColor;
 
         enemyCombination = new bool[n * n * n * n + 2];
 
@@ -71,12 +87,25 @@ void RandomCombination()
 			enemyCombination[smileNumber * n * n * n + colorNumber * n * n + eyeNumber * n + hatNumber] = true;
 
             smile.GetComponent<SpriteRenderer>().sprite = smileSprite[smileNumber - 1];
+			eye.GetComponent<SpriteRenderer>().sprite = eyeSprite[eyeNumber - 1];
+            hat.GetComponent<SpriteRenderer>().sprite = hatSprite[hatNumber - 1];
 		}
 	}
 
-    void FixedUpdate()
+    float timer = 2;
+
+	void Update()
+	{
+		smile.transform.position = transform.position + smileOffset;
+        eye.transform.position = transform.position + eyeOffset;
+        hat.transform.position = transform.position + hatOffset;
+
+		if (Time.time > timer) { smile.GetComponent<SpriteRenderer>().enabled ^= true; timer += 2; }
+	}
+
+	void FixedUpdate()
     {
-        rb.velocity = new Vector2(horizontal * ms * Player.haosLom, rb.velocity.y);
+		rb.velocity = new Vector2(horizontal * ms * Player.haosLom, rb.velocity.y);
         if (rb.velocity.y > 0) gameObject.layer = 10;
         else gameObject.layer = 8;
         jumpCD += Time.fixedDeltaTime;
@@ -109,7 +138,7 @@ void RandomCombination()
         }
         else
         {
-            sr.color= Color.red;
+            sr.color = enemyColor;
             if (Input.GetKey(KeyCode.Mouse1))
             {
                 if (nanisanljen)
@@ -126,7 +155,8 @@ void RandomCombination()
             if (Input.GetKey(KeyCode.Mouse0))
             {
                 Groblje.Umri();
-                Destroy(gameObject);
+				enemyCombination[smileNumber * n * n * n + colorNumber * n * n + eyeNumber * n + hatNumber] = false;
+				Destroy(gameObject);
                 Nisan.target--;
                 Player.haosLom = Player.haosMax;
                 print(Nisan.target);
