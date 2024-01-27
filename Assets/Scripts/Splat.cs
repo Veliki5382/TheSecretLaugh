@@ -6,7 +6,7 @@ using UnityEngine;
 public class Splat : MonoBehaviour
 {
     public static Vector3 porsition = new Vector3(0, -20, 0);
-    private static int timer=0;
+    public static int timer=0;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,7 +16,7 @@ public class Splat : MonoBehaviour
     public static void Kill(Transform location)
     {
         porsition = location.position;
-        timer = 100;
+        timer = 30;
     }
 
     // Update is called once per frame
