@@ -18,6 +18,7 @@ public class Player : MonoBehaviour
     private float horizontal;
     private float groundedCD;
     private bool canJump;
+    private bool isFacingRight;
 
     void Start()
     {
@@ -31,8 +32,10 @@ public class Player : MonoBehaviour
         else groundedCD = 0;
         if (groundedCD <= 0.1f) canJump = true;
         else canJump = false;
-        if (rb.velocity.y > 0) colider.isTrigger = true;
-        else colider.isTrigger = false;
+        if (rb.velocity.y > 0) Physics2D.IgnoreLayerCollision(6,7, true);
+        else Physics2D.IgnoreLayerCollision(6, 7, false);
+        if (!isFacingRight && horizontal > 0f) Flip();
+        else if (isFacingRight && horizontal < 0f) Flip();
     }
 
     private bool IsGrounded()
@@ -57,4 +60,12 @@ public class Player : MonoBehaviour
             rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
         }
     }
+    private void Flip()
+    {
+        isFacingRight = !isFacingRight;
+        Vector3 localScale = transform.localScale;
+        localScale.x *= -1;
+        transform.localScale = localScale;
+    }
+
 }
