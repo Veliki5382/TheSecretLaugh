@@ -28,8 +28,6 @@ public class Enemy : MonoBehaviour
     public GameObject LeftLeg;
     public GameObject RightLeg;
 
-	[SerializeField] private int n;
-	[SerializeField] private int m;
 	private int smileNumber;
 	private int colorNumber;
 	private int eyeNumber;
@@ -48,7 +46,9 @@ public class Enemy : MonoBehaviour
     private float flipCDmax;
     private bool nanisanljen = false;
 
-    static bool[] enemyCombination;
+	[SerializeField] static private int n;
+	[SerializeField] static private int m;
+	static bool[] enemyCombination;
     static bool[,] killCombination;
 
     void Start()
@@ -106,9 +106,9 @@ void RandomCombination()
 		}
 	}
 
-    int idx = 0;
+    static int idx = 0;
 
-    Vector2 FicaFunkcija()
+    static Vector2 FicaFunkcija()
     {
         while (killCombination[idx/m, idx%n] == false){idx += 11; idx %= n * m;}
         idx += 11; idx %= n * m;
