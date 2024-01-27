@@ -18,14 +18,17 @@ public class Player : MonoBehaviour
     public float jumpingPower = 16f;
     public Collider2D colider;
     public GameObject pero;
+    public AudioClip jumpSfx;
 
     private float horizontal;
     private float groundedCD;
     private bool canJump;
     private bool isFacingRight;
+    private AudioSource aurdio;
 
     void Start()
     {
+        aurdio = GetComponent<AudioSource>();
         haosLom = 1;
         haosMax = 3;
     }
@@ -51,7 +54,8 @@ public class Player : MonoBehaviour
             haosLom -= Time.fixedDeltaTime;
             haosLom= Mathf.Max(haosLom, 1);
         }
-        
+        if (Input.GetKeyDown("space") && IsGrounded())
+            aurdio.Play();
     }
 
     private bool IsGrounded()
