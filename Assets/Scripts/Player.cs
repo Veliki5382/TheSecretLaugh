@@ -18,14 +18,17 @@ public class Player : MonoBehaviour
     public float jumpingPower = 16f;
     public Collider2D colider;
     public GameObject pero;
+    public AudioClip jumpSfx;
 
     private float horizontal;
     private float groundedCD;
     private bool canJump;
     private bool isFacingRight;
+    private AudioSource aurdio;
 
     void Start()
     {
+        aurdio = GetComponent<AudioSource>();
         haosLom = 1;
         haosMax = 3;
     }
@@ -51,7 +54,6 @@ public class Player : MonoBehaviour
             haosLom -= Time.fixedDeltaTime;
             haosLom= Mathf.Max(haosLom, 1);
         }
-        
     }
 
     private bool IsGrounded()
@@ -70,6 +72,7 @@ public class Player : MonoBehaviour
     {
         if(context.performed && canJump)
         {
+            aurdio.Play();
             rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
         }
 

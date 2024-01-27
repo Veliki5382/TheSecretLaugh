@@ -13,6 +13,15 @@ public class Enemy : MonoBehaviour
     public float ms = 8f;
     public Collider2D colider;
     public SpriteRenderer sr;
+    public GameObject smile;
+    public Sprite[] smileSprite;
+
+    [SerializeField] private int n;
+    private int smileNumber;
+	private int colorNumber;
+	private int eyeNumber;
+	private int hatNumber;
+	private float horizontal;
     public AudioClip laughSfx;
 
     private AudioSource aurdio;
@@ -20,10 +29,12 @@ public class Enemy : MonoBehaviour
     private bool isJumping;
     private float jumpCDmax;
     private float jumpCD;
-    private bool isFacingRight; 
+    private bool isFacingRight;
     private float flipCD;
     private float flipCDmax;
     private bool nanisanljen = false;
+
+    static bool[] enemyCombination;
 
     void Start()
     {
@@ -33,7 +44,35 @@ public class Enemy : MonoBehaviour
         flipCD= 0f;
         jumpCDmax = Random.Range(2,4);
         flipCDmax = Random.Range(2,4);
+
+        Instantiate(smile, transform.position, Quaternion.identity);
+
+		n = 10;
+		RandomCombination();
+
     }
+
+void RandomCombination()
+	{
+		smileNumber = Random.Range(1, n);
+		colorNumber = Random.Range(1, n);
+		eyeNumber = Random.Range(1, n);
+		hatNumber = Random.Range(1, n);
+
+        enemyCombination = new bool[n * n * n * n + 2];
+
+        if (enemyCombination[smileNumber * n * n * n + colorNumber * n * n + eyeNumber * n + hatNumber] == true)
+		{
+			RandomCombination();
+			return;
+		}
+		else
+		{
+			enemyCombination[smileNumber * n * n * n + colorNumber * n * n + eyeNumber * n + hatNumber] = true;
+
+            smile.GetComponent<SpriteRenderer>().sprite = smileSprite[smileNumber - 1];
+		}
+	}
 
     void FixedUpdate()
     {
@@ -86,6 +125,7 @@ public class Enemy : MonoBehaviour
             Nisan.nisanPosition = transform.position;
             if (Input.GetKey(KeyCode.Mouse0))
             {
+                Splat.Kill(transform);
                 Groblje.Umri();
                 Destroy(gameObject);
                 Nisan.target--;
@@ -93,7 +133,7 @@ public class Enemy : MonoBehaviour
                 print(Nisan.target);
             }
         }
-        
+
     }
 
     private bool IsGrounded()
@@ -119,7 +159,7 @@ public class Enemy : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Wall" || collision.gameObject.tag == "Enemy")
+        if (collision.gameObject.CompareTag("Wall") || collision.gameObject.CompareTag("Enemy"))
         {
             horizontal *= -1;
         }
@@ -127,7 +167,7 @@ public class Enemy : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Pero")
+        if (collision.gameObject.CompareTag("Pero"))
         {
             //smej se
             aurdio.PlayOneShot(laughSfx);
