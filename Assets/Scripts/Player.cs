@@ -21,6 +21,7 @@ public class Player : MonoBehaviour
     public Collider2D colider;
     public GameObject pero;
     public AudioClip jumpSfx;
+    public GameObject pistolj;
 
     private float horizontal;
     private float groundedCD;
@@ -33,10 +34,17 @@ public class Player : MonoBehaviour
         aurdio = GetComponent<AudioSource>();
         haosLom = 1;
         haosMax = 4;
+        time = 60;
     }
 
     void FixedUpdate()
     {
+        print(time);
+        time -= Time.fixedDeltaTime;
+        if (time < 0)
+        {
+            //deathscreen
+        }
         rb.velocity = new Vector2(horizontal * ms, rb.velocity.y);
         if (!IsGrounded()) groundedCD += Time.fixedDeltaTime;
         else groundedCD = 0;
@@ -56,6 +64,8 @@ public class Player : MonoBehaviour
             haosLom -= Time.fixedDeltaTime/2;
             haosLom= Mathf.Max(haosLom, 1);
         }
+        if (Nisan.target == 1) pistolj.gameObject.SetActive(true);
+        else pistolj.gameObject.SetActive(false);
     }
 
     private bool IsGrounded()

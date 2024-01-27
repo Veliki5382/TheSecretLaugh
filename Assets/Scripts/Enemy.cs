@@ -161,6 +161,7 @@ void RandomCombination()
                 Nisan.target--;
                 Player.haosLom = Player.haosMax;
                 print(Nisan.target);
+                Player.time += 15;
             }
         }
 
