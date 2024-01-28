@@ -93,7 +93,7 @@ public class Enemy : MonoBehaviour
         enemyCombination = new bool[(n+1)*(n+1)*(n+1)];
 
         if (enemyCombination[smileNumber * n * n + eyeNumber * n + hatNumber] == true ||
-           NEMOGUVISESVEDATRPAMUENEMYA.killCombination[smileNumber, soundNumber] == true)
+            NEMOGUVISESVEDATRPAMUENEMYA.killCombination[smileNumber, soundNumber] == true)
 		{
 			RandomCombination();
 			return;
@@ -101,7 +101,7 @@ public class Enemy : MonoBehaviour
 		else
 		{
 			enemyCombination[smileNumber * n * n + eyeNumber * n + hatNumber] = true;
-           NEMOGUVISESVEDATRPAMUENEMYA.killCombination[smileNumber, soundNumber] = true;
+            NEMOGUVISESVEDATRPAMUENEMYA.killCombination[smileNumber, soundNumber] = true;
 
             smile.GetComponent<SpriteRenderer>().sprite = smileSprite[smileNumber];
 			eye.GetComponent<SpriteRenderer>().sprite = eyeSprite[eyeNumber];
@@ -119,13 +119,21 @@ public class Enemy : MonoBehaviour
         eye.transform.position = transform.position + eyeOffset;
         hat.transform.position = transform.position + hatOffset;
 
+		if (Input.GetKey(KeyCode.Mouse1) && !nanisanljen &&
+            Mathf.Abs(Nisan.mousePosition.x - transform.position.x) <= 1 && Mathf.Abs(Nisan.mousePosition.y - transform.position.y) <= 1)
+		{
+			nanisanljen = true;
+			Nisan.target++;
+			print(Nisan.target);
+		}
+
 		//if (Time.time > timer) { smile.GetComponent<SpriteRenderer>().enabled ^= true; timer += 2; }
 
-       /*/ if (Input.GetKey(KeyCode.N))
-        {
-            print("Spawned");
-			controller.GetComponent<EnemySpawner>().Spawn();
-		}/*/
+		/*/ if (Input.GetKey(KeyCode.N))
+		 {
+			 print("Spawned");
+			 controller.GetComponent<EnemySpawner>().Spawn();
+		 }/*/
 	}
 
 	void FixedUpdate()
@@ -150,16 +158,13 @@ public class Enemy : MonoBehaviour
         if (!isFacingRight && horizontal > 0f) Flip();
         else if(isFacingRight && horizontal <0f) Flip();
 
-        if (Mathf.Abs(Nisan.mousePosition.x - transform.position.x) <= 1 && Mathf.Abs(Nisan.mousePosition.y - transform.position.y) <= 1)
+		
+
+		if (Mathf.Abs(Nisan.mousePosition.x - transform.position.x) <= 1 && Mathf.Abs(Nisan.mousePosition.y - transform.position.y) <= 1)
         {
             //zasvetli enemya
             sr.color = Color.magenta;
-            if (Input.GetKey(KeyCode.Mouse1) && !nanisanljen)
-            {
-                nanisanljen = true;
-                Nisan.target++;
-                print(Nisan.target);
-            }
+            
         }
         else
         {
@@ -183,8 +188,8 @@ public class Enemy : MonoBehaviour
                 Splat.Kill(transform);
                 Groblje.Umri();
 				enemyCombination[smileNumber * n * n + eyeNumber * n + hatNumber] = false;
-               NEMOGUVISESVEDATRPAMUENEMYA.killCombination[smileNumber, soundNumber] = false;
-               NEMOGUVISESVEDATRPAMUENEMYA.expectedEnemies += 2;
+                NEMOGUVISESVEDATRPAMUENEMYA.killCombination[smileNumber, soundNumber] = false;
+                NEMOGUVISESVEDATRPAMUENEMYA.expectedEnemies += 2;
                 Nisan.target--;
                 Player.haosLom = Player.haosMax;
                 print(Nisan.target);
