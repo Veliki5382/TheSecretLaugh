@@ -92,7 +92,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   smileSprite:
-  - {fileID: 1126508655, guid: ef50364527a4e3d4888971e6fcfb974c, type: 3}
+  - {fileID: -333543960, guid: ef50364527a4e3d4888971e6fcfb974c, type: 3}
   - {fileID: -225428199, guid: ef50364527a4e3d4888971e6fcfb974c, type: 3}
   - {fileID: -1766441527, guid: ef50364527a4e3d4888971e6fcfb974c, type: 3}
   - {fileID: 574510434, guid: ef50364527a4e3d4888971e6fcfb974c, type: 3}
@@ -101,7 +101,7 @@ MonoBehaviour:
   - {fileID: 1200804422, guid: ef50364527a4e3d4888971e6fcfb974c, type: 3}
   - {fileID: 2126022239, guid: ef50364527a4e3d4888971e6fcfb974c, type: 3}
   - {fileID: -1435475141, guid: ef50364527a4e3d4888971e6fcfb974c, type: 3}
-  - {fileID: -333543960, guid: ef50364527a4e3d4888971e6fcfb974c, type: 3}
+  - {fileID: 1126508655, guid: ef50364527a4e3d4888971e6fcfb974c, type: 3}
   soundSprite:
   - {fileID: 8300000, guid: 253f3459789cf1d41bde0aad6c2e2960, type: 3}
   - {fileID: 8300000, guid: 20f87f2f63fc1d84f825fb897956c320, type: 3}
@@ -121,6 +121,7 @@ MonoBehaviour:
   aurdio: {fileID: 6104612796807393619}
   rt: {fileID: 7374766291218983114}
   ms: 200
+  score: {fileID: 0}
 --- !u!82 &6104612796807393619
 AudioSource:
   m_ObjectHideFlags: 0
