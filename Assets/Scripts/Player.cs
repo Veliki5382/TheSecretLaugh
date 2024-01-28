@@ -1,9 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.UIElements;
 
 public class Player : MonoBehaviour
 {
@@ -23,6 +21,9 @@ public class Player : MonoBehaviour
     public AudioClip jumpSfx;
     public GameObject pistolj;
     public Animator animator;
+    public Papir1 papir1;
+    public Papir2 papir2;
+    public Papir3 papir3;
 
     private float horizontal;
     private float groundedCD;
@@ -40,7 +41,7 @@ public class Player : MonoBehaviour
 
     void FixedUpdate()
     {
-        print(score);
+        //print(score);
         time -= Time.fixedDeltaTime;
         if (time < 0)
         {
@@ -76,6 +77,13 @@ public class Player : MonoBehaviour
         else pistolj.gameObject.SetActive(false);
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Alpha1)) papir1.PlaySound();
+        if (Input.GetKeyDown(KeyCode.Alpha2)) papir2.PlaySound();
+        if (Input.GetKeyDown(KeyCode.Alpha3)) papir3.PlaySound();
+    }
+
     private bool IsGrounded()
     {
         return Physics2D.OverlapCircle(groundCheckLeft.position, 0.02f, groundLayer) || Physics2D.OverlapCircle(groundCheckRight.position, 0.02f, groundLayer);
@@ -104,6 +112,7 @@ public class Player : MonoBehaviour
 
     public void VadiPero(InputAction.CallbackContext context)
     {
+        print("asfddfas");
         if (context.performed && Input.GetKey(KeyCode.Mouse1)==false)
         {
             pero.gameObject.SetActive(true);
@@ -119,5 +128,20 @@ public class Player : MonoBehaviour
         Vector3 localScale = transform.localScale;
         localScale.x *= -1;
         transform.localScale = localScale;
+    }
+
+    public void Click1(InputAction.CallbackContext context)
+    {
+        print("sdfhijofgsdhj");
+    }
+
+    public void Click2(InputAction.CallbackContext context) 
+    {
+        papir2.PlaySound();
+    }
+
+    public void Click3(InputAction.CallbackContext context)
+    {
+        papir3.PlaySound();
     }
 }

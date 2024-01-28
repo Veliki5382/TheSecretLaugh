@@ -724,6 +724,54 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 0dac9a4d-0d27-4985-a4e2-7728cae28956
     m_ActionName: Player/Bang[/Keyboard/enter]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7739704637615861026}
+        m_TargetAssemblyTypeName: Player, Assembly-CSharp
+        m_MethodName: Click1
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 4ea59c44-914b-4caf-a741-dc1c5d6bfa78
+    m_ActionName: Player/Click1[/Keyboard/1]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7739704637615861026}
+        m_TargetAssemblyTypeName: Player, Assembly-CSharp
+        m_MethodName: Click2
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: d04444fb-408d-4e59-a511-9159fd91a98d
+    m_ActionName: Player/Click2[/Keyboard/2]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7739704637615861026}
+        m_TargetAssemblyTypeName: Player, Assembly-CSharp
+        m_MethodName: Click3
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: b87c9f0f-482b-4165-8485-1980afcb59fc
+    m_ActionName: Player/Click3[/Keyboard/3]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -806,6 +854,9 @@ MonoBehaviour:
   jumpSfx: {fileID: 8300000, guid: e46e7b1dcfb961c4997252f2a9dd667b, type: 3}
   pistolj: {fileID: 1434416829961351449}
   animator: {fileID: 8579565214071028066}
+  papir1: {fileID: 0}
+  papir2: {fileID: 0}
+  papir3: {fileID: 0}
 --- !u!61 &3213277135968468602
 BoxCollider2D:
   m_ObjectHideFlags: 0

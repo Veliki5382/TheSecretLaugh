@@ -28,6 +28,7 @@ public class Papir3 : MonoBehaviour
         rt.transform.position = new Vector2(-400, transform.position.y);
         moze = false;
         moze1 = true;
+        wanted = new Vector2(-1, -1);
     }
 
     private void FixedUpdate()
@@ -61,7 +62,7 @@ public class Papir3 : MonoBehaviour
 
     public void PlaySound()
     {
-        if (!Input.GetKey(KeyCode.Space)) aurdio.PlayOneShot(soundSprite[(int)wanted.y], 0.2f);
+        if (!Input.GetKey(KeyCode.Space) && wanted.y >= 0) aurdio.PlayOneShot(soundSprite[(int)wanted.y], 0.2f);
     }
 
     public void PomeriPaVrati()
