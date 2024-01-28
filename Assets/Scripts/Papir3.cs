@@ -13,6 +13,7 @@ public class Papir3 : MonoBehaviour
     public AudioSource aurdio;
     public RectTransform rt;
     public float ms;
+    public RectTransform score;
 
     private bool bioPrvi;
     private bool pomeranjeLevo;
@@ -23,8 +24,8 @@ public class Papir3 : MonoBehaviour
 
     private void Start()
     {
-        pocPozX = rt.transform.position.x;
-        rt.transform.position = new Vector2(-100, transform.position.y);
+        pocPozX = score.transform.position.x-150;
+        rt.transform.position = new Vector2(-400, transform.position.y);
         moze = false;
         moze1 = true;
     }
@@ -34,11 +35,11 @@ public class Papir3 : MonoBehaviour
         //print(rt.transform.position);
         //print(pomeranjeLevo);
         if (Player.score >= 3) moze = true;
-        if (pomeranjeLevo && rt.transform.position.x >= -100)
+        if (pomeranjeLevo && rt.transform.position.x >= -120)
         {
             rt.transform.position = rt.transform.position - new Vector3(Time.fixedDeltaTime * ms, 0, 0);
         }
-        if (rt.transform.position.x <= -100 && moze && moze1)
+        if (rt.transform.position.x <= -120 && moze && moze1)
         {
             pomeranjeLevo = false;
             wanted = NEMOGUVISESVEDATRPAMUENEMYA.FicaFunkcija();

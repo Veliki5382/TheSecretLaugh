@@ -54,7 +54,6 @@ public class Enemy : MonoBehaviour
 	[SerializeField] static private int n;
 	[SerializeField] static private int m;
 	static bool[] enemyCombination;
-    static bool[,] killCombination;
     void Start()
     {
         aurdio = GetComponent<AudioSource>();
