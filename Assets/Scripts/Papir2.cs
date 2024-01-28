@@ -4,7 +4,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 
-public class Papir1 : MonoBehaviour
+public class Papir2 : MonoBehaviour
 {
     public Sprite[] smileSprite;
     public AudioClip[] soundSprite;
@@ -14,44 +14,40 @@ public class Papir1 : MonoBehaviour
     public RectTransform rt;
     public float ms;
 
-    private float startCD;
-    private float startCD1;
     private bool bioPrvi;
     private bool pomeranjeLevo;
     private bool pomeranjeDesno;
     private float pocPozX;
-    private float pocPozY;
+    private bool moze;
+    private bool moze1;
 
     private void Start()
     {
-        startCD = 0.1f;
-        pocPozX=rt.transform.position.x;
+        pocPozX = transform.position.x;
+        transform.position = new Vector2(-100,transform.position.y);
+        moze = false;
+        moze1 = true;
     }
 
     private void FixedUpdate()
     {
-        if (!bioPrvi) startCD1 += Time.fixedDeltaTime;
-        if (startCD1 >= startCD && !bioPrvi)
-        {
-            bioPrvi = true;
-            wanted = NEMOGUVISESVEDATRPAMUENEMYA.FicaFunkcija();
-            osmeh.sprite = smileSprite[(int)wanted.x];
-        }
         //print(rt.transform.position);
         //print(pomeranjeLevo);
-        if(pomeranjeLevo && rt.transform.position.x >= -100)
+        if (Player.score >= 1) moze = true;
+        if (pomeranjeLevo && rt.transform.position.x >= -100)
         {
-            rt.transform.position=rt.transform.position-new Vector3(Time.fixedDeltaTime*ms,0,0);
+            rt.transform.position = rt.transform.position - new Vector3(Time.fixedDeltaTime * ms, 0, 0);
         }
-        if (rt.transform.position.x <= -100)
+        if (rt.transform.position.x <= -100 && moze && moze1)
         {
             pomeranjeLevo = false;
             wanted = NEMOGUVISESVEDATRPAMUENEMYA.FicaFunkcija();
             print(wanted);
             osmeh.sprite = smileSprite[(int)wanted.x];
             pomeranjeDesno = true;
+            moze1 = false;
         }
-        if(rt.transform.position.x<=pocPozX && pomeranjeDesno)
+        if (rt.transform.position.x <= pocPozX && pomeranjeDesno)
         {
             rt.transform.position = rt.transform.position + new Vector3(Time.fixedDeltaTime * ms, 0, 0);
         }
@@ -59,16 +55,17 @@ public class Papir1 : MonoBehaviour
         {
             pomeranjeDesno = false;
         }
-        //print(rt.transform.position.x);
+        print(rt.transform.position.x);
     }
 
     public void PlaySound()
     {
-        if (!Input.GetKey(KeyCode.Space)) aurdio.PlayOneShot(soundSprite[(int)wanted.y],0.2f);
+        if (!Input.GetKey(KeyCode.Space)) aurdio.PlayOneShot(soundSprite[(int)wanted.y], 0.2f);
     }
 
     public void PomeriPaVrati()
     {
         pomeranjeLevo = true;
+        moze1 = true;
     }
 }

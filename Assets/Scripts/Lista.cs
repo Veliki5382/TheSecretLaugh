@@ -27,7 +27,7 @@ public class Lista : MonoBehaviour
         if (startCD1 >= startCD && !bioPrvi)
         {
             bioPrvi = true;
-            wanted1 = Enemy.FicaFunkcija();
+            wanted1 = NEMOGUVISESVEDATRPAMUENEMYA.FicaFunkcija();
             print (wanted1);
         }
 

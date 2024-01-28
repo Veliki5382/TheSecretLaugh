@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Threading;
 using Unity.VisualScripting.Antlr3.Runtime;
 using UnityEditor;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -39,6 +40,8 @@ public class Enemy : MonoBehaviour
 	private float horizontal;
     public AudioClip laughSfx;
     public Papir1 papir1;
+    public Papir2 papir2;
+    public Papir3 papir3;
 
     private AudioSource aurdio;
     private bool isJumping;
@@ -75,6 +78,9 @@ public class Enemy : MonoBehaviour
 		RandomCombination();
         LeftLeg.GetComponent<SpriteRenderer>().color = enemyColor;
         RightLeg.GetComponent<SpriteRenderer>().color = enemyColor;
+        papir1 = GameObject.FindWithTag("Papir1").GetComponent<Papir1>();
+        papir2 = GameObject.FindWithTag("Papir2").GetComponent<Papir2>();
+        papir3 = GameObject.FindWithTag("Papir3").GetComponent<Papir3>();
     }
 
     void RandomCombination()
@@ -91,7 +97,7 @@ public class Enemy : MonoBehaviour
         killCombination = new bool[n, m];
 
         if (enemyCombination[smileNumber * n * n + eyeNumber * n + hatNumber] == true ||
-            killCombination[smileNumber, soundNumber] == true)
+           NEMOGUVISESVEDATRPAMUENEMYA.killCombination[smileNumber, soundNumber] == true)
 		{
 			RandomCombination();
 			return;
@@ -99,7 +105,7 @@ public class Enemy : MonoBehaviour
 		else
 		{
 			enemyCombination[smileNumber * n * n + eyeNumber * n + hatNumber] = true;
-            killCombination[smileNumber, soundNumber] = true;
+           NEMOGUVISESVEDATRPAMUENEMYA.killCombination[smileNumber, soundNumber] = true;
 
             smile.GetComponent<SpriteRenderer>().sprite = smileSprite[smileNumber];
 			eye.GetComponent<SpriteRenderer>().sprite = eyeSprite[eyeNumber];
@@ -110,29 +116,12 @@ public class Enemy : MonoBehaviour
 
     
 
-    static int idx = 0;
-
-    public static Vector2 FicaFunkcija()
-    {
-        while (killCombination[idx/m, idx%n] == false){idx += 11; idx %= n * m;}
-        idx += 11; idx %= n * m;
-        return new Vector2(idx / m, idx % n);
-    }
 
     float timer = 2;
 
 	void Update()
 	{
-        for(int i = 0; i < 10; i++)
-        {
-            for(int j=0;j<13;j++)
-            {
-				if (killCombination[i, j] == true)
-                {
-					print(i + " " + j);
-				}
-			}
-        }
+        
 		smile.transform.position = transform.position + smileOffset;
         eye.transform.position = transform.position + eyeOffset;
         hat.transform.position = transform.position + hatOffset;
@@ -189,7 +178,7 @@ public class Enemy : MonoBehaviour
                     nanisanljen = false;
                     Nisan.target--;
                 }
-                print(Nisan.target);
+                //print(Nisan.target);
             }
         }
         if (nanisanljen)
@@ -197,23 +186,41 @@ public class Enemy : MonoBehaviour
             Nisan.nisanPosition = transform.position;
             if (Input.GetKey(KeyCode.Mouse0))
             {
-                Splat.Kill(transform);
-                Groblje.Umri();
-                GetComponent<EnemySpawner>().Spawn();
-				enemyCombination[smileNumber * n * n + eyeNumber * n + hatNumber] = false;
-                killCombination[smileNumber, soundNumber] = false;
-                Destroy(smile);
-                Destroy(eye);
-                Destroy(hat);
-                Destroy(gameObject);
                 Nisan.target--;
                 Player.haosLom = Player.haosMax;
                 print(Nisan.target);
                 Player.time += 15;
-                if(smileNumber==papir1.wanted.x && soundNumber == papir1.wanted.y)
+                if (smileNumber == (int)papir1.wanted.x && soundNumber == (int)papir1.wanted.y)
                 {
                     papir1.PomeriPaVrati();
+                    Player.score++;
+                    print("naso");
                 }
+                else if(smileNumber == (int)papir2.wanted.x && soundNumber == (int)papir2.wanted.y)
+                {
+                    papir2.PomeriPaVrati();
+                    Player.score++;
+                }
+                else if (smileNumber == (int)papir3.wanted.x && soundNumber == (int)papir3.wanted.y)
+                {
+                    papir3.PomeriPaVrati();
+                    Player.score++;
+                }
+                else
+                {
+                    //izgubio si
+                    papir1.PomeriPaVrati();
+                    Player.score++;
+                }
+                Splat.Kill(transform);
+                Groblje.Umri();
+                //GetComponent<EnemySpawner>().Spawn();
+				enemyCombination[smileNumber * n * n + eyeNumber * n + hatNumber] = false;
+               NEMOGUVISESVEDATRPAMUENEMYA.killCombination[smileNumber, soundNumber] = false;
+                Destroy(smile);
+                Destroy(eye);
+                Destroy(hat);
+                Destroy(gameObject);
             }
         }
 
