@@ -35,11 +35,15 @@ public class Papir1 : MonoBehaviour
         }
         print(rt.transform.position);
         print(pomeranjeLevo);
-        if(pomeranjeLevo && rt.transform.position.x >= 0)
+        if(pomeranjeLevo && rt.transform.position.x >= -100)
         {
             rt.transform.position=rt.transform.position-new Vector3(Time.fixedDeltaTime*ms,0,0);
         }
-        if(transform.position.x ==0) pomeranjeLevo = false;
+        if (transform.position.x == -100)
+        {
+            pomeranjeLevo = false;
+            wanted = Enemy.FicaFunkcija();
+        }
     }
 
     public void PlaySound()

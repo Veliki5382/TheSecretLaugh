@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
+using Unity.VisualScripting.Antlr3.Runtime;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -36,6 +37,7 @@ public class Enemy : MonoBehaviour
     private Color enemyColor;
 	private float horizontal;
     public AudioClip laughSfx;
+    public Papir1 papir1;
 
     private AudioSource aurdio;
     private bool isJumping;
@@ -189,6 +191,10 @@ void RandomCombination()
                 Player.haosLom = Player.haosMax;
                 print(Nisan.target);
                 Player.time += 15;
+                if(smileNumber==papir1.wanted.x && soundNumber == papir1.wanted.y)
+                {
+                    papir1.PomeriPaVrati();
+                }
             }
         }
 
