@@ -130,7 +130,7 @@ public class Enemy : MonoBehaviour
 
         if (smileTime < smileTimer)
         {
-            smileTime++;
+            smileTime += Time.deltaTime;
         }
         else if(smileTime>=smileTimer)
         {
