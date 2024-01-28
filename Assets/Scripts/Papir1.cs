@@ -13,6 +13,7 @@ public class Papir1 : MonoBehaviour
     public AudioSource aurdio;
     public RectTransform rt;
     public float ms;
+    public RectTransform score;
 
     private float startCD;
     private float startCD1;
@@ -22,10 +23,11 @@ public class Papir1 : MonoBehaviour
     private float pocPozX;
     private float pocPozY;
 
+
     private void Start()
     {
         startCD = 0.1f;
-        pocPozX=rt.transform.position.x;
+        pocPozX=score.transform.position.x-150;
     }
 
     private void FixedUpdate()
@@ -39,11 +41,11 @@ public class Papir1 : MonoBehaviour
         }
         //print(rt.transform.position);
         //print(pomeranjeLevo);
-        if(pomeranjeLevo && rt.transform.position.x >= -100)
+        if(pomeranjeLevo && rt.transform.position.x >= -120)
         {
             rt.transform.position=rt.transform.position-new Vector3(Time.fixedDeltaTime*ms,0,0);
         }
-        if (rt.transform.position.x <= -100)
+        if (rt.transform.position.x <= -120)
         {
             pomeranjeLevo = false;
             wanted = NEMOGUVISESVEDATRPAMUENEMYA.FicaFunkcija();
