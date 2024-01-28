@@ -12,10 +12,12 @@ public class Papir1 : MonoBehaviour
     public Image osmeh;
     public AudioSource aurdio;
     public RectTransform rt;
+    public float ms;
 
     private float startCD;
     private float startCD1;
     private bool bioPrvi;
+    private bool pomeranjeLevo;
 
     private void Start()
     {
@@ -31,7 +33,13 @@ public class Papir1 : MonoBehaviour
             wanted = Enemy.FicaFunkcija();
             osmeh.sprite = smileSprite[(int)wanted.x];
         }
-        print(rt.anchoredPosition);
+        print(rt.transform.position);
+        print(pomeranjeLevo);
+        if(pomeranjeLevo && rt.transform.position.x >= 0)
+        {
+            rt.transform.position=rt.transform.position-new Vector3(Time.fixedDeltaTime*ms,0,0);
+        }
+        if(transform.position.x ==0) pomeranjeLevo = false;
     }
 
     public void PlaySound()
@@ -41,6 +49,6 @@ public class Papir1 : MonoBehaviour
 
     public void PomeriPaVrati()
     {
-        
+        pomeranjeLevo = true;
     }
 }

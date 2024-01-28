@@ -5235,6 +5235,8 @@ MonoBehaviour:
   wanted: {x: 0, y: 0}
   osmeh: {fileID: 948094150}
   aurdio: {fileID: 1752228822}
+  rt: {fileID: 1752228818}
+  ms: 0
 --- !u!82 &1752228822
 AudioSource:
   m_ObjectHideFlags: 0
@@ -5605,7 +5607,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1752228821}
         m_TargetAssemblyTypeName: Papir1, Assembly-CSharp
-        m_MethodName: PlaySound
+        m_MethodName: PomeriPaVrati
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
