@@ -5,10 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class Main : MonoBehaviour
 {
-    public static int highscore;
     void Start()
     {
-        highscore = PlayerPrefs.GetInt("HighScore", 0);
+        Player.score = 0;
     }
 
     private void FixedUpdate()
