@@ -199,7 +199,7 @@ Transform:
   m_GameObject: {fileID: 4369268913441564182}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.6, y: -0.1, z: -0.085688815}
+  m_LocalPosition: {x: -2.4, y: -0.1, z: -0.085688815}
   m_LocalScale: {x: -0.9144328, y: 0.99626124, z: 0.7711}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -301,16 +301,16 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 2.9221797, y: 2.1837153}
+    - - {x: 2.0346541, y: 1.7473072}
       - {x: 1.2073007, y: 1.9550389}
       - {x: -1.8606812, y: 1.3765844}
       - {x: -2.0274258, y: 0.78596544}
       - {x: -3.169624, y: 0.30790004}
       - {x: -1.9477105, y: -0.63443273}
-      - {x: -1.740581, y: -1.0863444}
-      - {x: -0.15552603, y: -1.5743082}
-      - {x: 2.9767442, y: -2.404787}
-      - {x: 3.0294366, y: -0.117186144}
+      - {x: -1.550397, y: -0.9117811}
+      - {x: 0.034657836, y: -1.152447}
+      - {x: 1.8514886, y: -0.89190584}
+      - {x: 2.1577597, y: -0.14628}
   m_UseDelaunayMesh: 0
 --- !u!95 &5819053915967245853
 Animator:
@@ -857,6 +857,9 @@ MonoBehaviour:
   papir1: {fileID: 3227713095690141751, guid: bcf91baa18eb3094db32a71c8f1aaf77, type: 3}
   papir2: {fileID: 0}
   papir3: {fileID: 0}
+  game: {fileID: 0}
+  ostalo: {fileID: 0}
+  deathscreen: {fileID: 0}
 --- !u!61 &3213277135968468602
 BoxCollider2D:
   m_ObjectHideFlags: 0
