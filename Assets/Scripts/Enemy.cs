@@ -196,7 +196,7 @@ void RandomCombination()
 
     private bool IsGrounded()
     {
-        return Physics2D.OverlapCircle(groundCheckLeft.position, 0.02f, groundLayer) || Physics2D.OverlapCircle(groundCheckRight.position, 0.02f, groundLayer);
+        return Physics2D.OverlapCircle(groundCheckLeft.position, 0.1f, groundLayer) || Physics2D.OverlapCircle(groundCheckRight.position, 0.1f, groundLayer);
     }
 
     public void Jump(float jumpingPower)
