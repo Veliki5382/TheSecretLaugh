@@ -9,6 +9,7 @@ public class Player : MonoBehaviour
     public static float haosMax;
     public static float time;
     public static float score;
+    public static bool umro;
 
     public Rigidbody2D rb;
     public Transform groundCheckLeft;
@@ -24,6 +25,9 @@ public class Player : MonoBehaviour
     public Papir1 papir1;
     public Papir2 papir2;
     public Papir3 papir3;
+    public GameObject game;
+    public GameObject ostalo;
+    public GameObject deathscreen;
 
     private float horizontal;
     private float groundedCD;
@@ -36,17 +40,16 @@ public class Player : MonoBehaviour
         aurdio = GetComponent<AudioSource>();
         haosLom = 1;
         haosMax = 4;
-        time = 60;
+        time = 5;
+        umro = false;
     }
 
     void FixedUpdate()
     {
+        
         //print(score);
         time -= Time.fixedDeltaTime;
-        if (time < 0)
-        {
-            //deathscreen
-        }
+        if (time < 0) umro = true;
         
         rb.velocity = new Vector2(horizontal * ms, rb.velocity.y);
         if (!IsGrounded()) groundedCD += Time.fixedDeltaTime;
@@ -75,6 +78,7 @@ public class Player : MonoBehaviour
         }
         if (Nisan.target == 1) pistolj.gameObject.SetActive(true);
         else pistolj.gameObject.SetActive(false);
+        if (umro) Umri();
     }
 
     private void Update()
@@ -143,5 +147,12 @@ public class Player : MonoBehaviour
     public void Click3(InputAction.CallbackContext context)
     {
         papir3.PlaySound();
+    }
+    
+    public void Umri()
+    {
+        game.SetActive(false);
+        ostalo.SetActive(false);
+        deathscreen.SetActive(true);
     }
 }

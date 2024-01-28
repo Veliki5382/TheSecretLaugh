@@ -267,7 +267,7 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
-  ms: 8
+  ms: 6
   colider: {fileID: 89426136414548161}
   sr: {fileID: 1004005028281585874}
   smile: {fileID: 8585443319073504790, guid: 28297f9b5d301b04f956cdd6b7920a78, type: 3}
@@ -326,6 +326,8 @@ MonoBehaviour:
   LeftLeg: {fileID: 2949416392010781398}
   RightLeg: {fileID: 6305657021007923197}
   controller: {fileID: 8369449361091067346, guid: 85925547487235945a9c687440ff6eba, type: 3}
+  smileTimer: 100
+  smileTime: 0
   laughSfx: {fileID: 0}
   papir1: {fileID: 0}
   papir2: {fileID: 0}

@@ -211,7 +211,7 @@ public class Enemy : MonoBehaviour
                 }
                 else
                 {
-                    //izgubio si
+                    Player.umro = true;
                     papir1.PomeriPaVrati();
                     Player.score++;
                 }

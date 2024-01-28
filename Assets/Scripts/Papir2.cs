@@ -62,7 +62,7 @@ public class Papir2 : MonoBehaviour
 
     public void PlaySound()
     {
-        if (!Input.GetKey(KeyCode.Space) && wanted.y>=0) aurdio.PlayOneShot(soundSprite[(int)wanted.y], 0.2f);
+        if (!Input.GetKey(KeyCode.Space) && wanted.y>=0) aurdio.PlayOneShot(soundSprite[(int)wanted.y], 0.07f);
     }
 
     public void PomeriPaVrati()
