@@ -27,7 +27,7 @@ public class Papir1 : MonoBehaviour
     private void Start()
     {
         startCD = 0.1f;
-        pocPozX=score.transform.position.x-150;
+        pocPozX=score.transform.position.x- 150 / 1115 * Screen.width;
     }
 
     private void FixedUpdate()

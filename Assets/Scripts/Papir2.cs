@@ -24,7 +24,7 @@ public class Papir2 : MonoBehaviour
 
     private void Start()
     {
-        pocPozX = score.transform.position.x-150;
+        pocPozX = score.transform.position.x-150 / 1115 * Screen.width;
         transform.position = new Vector2(-400,transform.position.y);
         moze = false;
         moze1 = true;
@@ -35,7 +35,7 @@ public class Papir2 : MonoBehaviour
     {
         //print(rt.transform.position);
         //print(pomeranjeLevo);
-        if (Player.score >= 2) moze = true;
+        if (Player.score >= 3) moze = true;
         if (pomeranjeLevo && rt.transform.position.x >= -120)
         {
             rt.transform.position = rt.transform.position - new Vector3(Time.fixedDeltaTime * ms, 0, 0);

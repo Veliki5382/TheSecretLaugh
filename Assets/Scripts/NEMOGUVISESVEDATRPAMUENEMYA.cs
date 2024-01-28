@@ -13,7 +13,7 @@ public class NEMOGUVISESVEDATRPAMUENEMYA : MonoBehaviour
     {
         killCombination = new bool[10, 13];
         enemyCounter = 0;
-        expectedEnemies = 5;
+        expectedEnemies = 3;
     }
 
     private void Update()
