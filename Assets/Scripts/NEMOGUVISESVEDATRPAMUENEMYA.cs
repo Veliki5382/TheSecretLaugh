@@ -5,7 +5,7 @@ using UnityEngine.InputSystem.XR;
 
 public class NEMOGUVISESVEDATRPAMUENEMYA : MonoBehaviour
 {
-   public static bool[,] killCombination;
+    public static bool[,] killCombination;
     public static int enemyCounter;
     public static int expectedEnemies;
     public GameObject controller;
