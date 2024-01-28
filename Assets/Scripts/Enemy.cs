@@ -112,31 +112,22 @@ public class Enemy : MonoBehaviour
 
 
 	void Update()
-	{
-        
-		smile.transform.position = transform.position + smileOffset;
+    {
+        smile.transform.position = transform.position + smileOffset;
         eye.transform.position = transform.position + eyeOffset;
         hat.transform.position = transform.position + hatOffset;
 
-		if (Input.GetKey(KeyCode.Mouse1) && !nanisanljen &&
+        if (Input.GetKey(KeyCode.Mouse1) && !nanisanljen &&
             Mathf.Abs(Nisan.mousePosition.x - transform.position.x) <= 1 && Mathf.Abs(Nisan.mousePosition.y - transform.position.y) <= 1)
-		{
-			nanisanljen = true;
-			Nisan.target++;
-			print(Nisan.target);
-		}
+        {
+            nanisanljen = true;
+            Nisan.target++;
+            print(Nisan.target);
+        }
 
-		//if (Time.time > timer) { smile.GetComponent<SpriteRenderer>().enabled ^= true; timer += 2; }
+        ///
 
-		/*/ if (Input.GetKey(KeyCode.N))
-		 {
-			 print("Spawned");
-			 controller.GetComponent<EnemySpawner>().Spawn();
-		 }/*/
-	}
 
-	void FixedUpdate()
-    {
         if (smileTime < smileTimer)
         {
             smileTime++;
@@ -149,8 +140,8 @@ public class Enemy : MonoBehaviour
 		rb.velocity = new Vector2(horizontal * ms * Player.haosLom, rb.velocity.y);
         if (rb.velocity.y > 0) gameObject.layer = 10;
         else gameObject.layer = 8;
-        jumpCD += Time.fixedDeltaTime;
-        flipCD += Time.fixedDeltaTime;
+        jumpCD += Time.deltaTime;
+        flipCD += Time.deltaTime;
         if (jumpCD >= jumpCDmax)
         {
             Jump(Random.Range(15,25));
@@ -177,7 +168,7 @@ public class Enemy : MonoBehaviour
         else
         {
             sr.color = enemyColor;
-            if (Input.GetKey(KeyCode.Mouse1))
+            if (Input.GetKeyDown(KeyCode.Mouse1))
             {
                 if (nanisanljen)
                 {
@@ -190,7 +181,7 @@ public class Enemy : MonoBehaviour
         if (nanisanljen)
         {
             Nisan.nisanPosition = transform.position;
-            if (Input.GetKey(KeyCode.Mouse0))
+            if (Input.GetKeyDown(KeyCode.Mouse0))
             {
                 //GetComponent<EnemySpawner>().Spawn();
                 Splat.Kill(transform);
