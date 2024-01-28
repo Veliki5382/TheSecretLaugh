@@ -30,8 +30,7 @@ public class Enemy : MonoBehaviour
     public GameObject RightLeg;
     public GameObject controller;
 
-	private int smileNumber;
-	private int colorNumber;
+    private int smileNumber;
 	private int eyeNumber;
 	private int hatNumber;
     private int soundNumber;
@@ -53,6 +52,9 @@ public class Enemy : MonoBehaviour
 	[SerializeField] static private int m;
 	static bool[] enemyCombination;
     static bool[,] killCombination;
+    private static int enemyCounter;
+    private static int expectedEnemies;
+    private static int score;
 
     void Start()
     {
@@ -62,6 +64,8 @@ public class Enemy : MonoBehaviour
         flipCD= 0f;
         jumpCDmax = Random.Range(2,4);
         flipCDmax = Random.Range(2,4);
+        enemyCounter = 6;
+        expectedEnemies = 6;
 
         smile = Instantiate(smile, transform.position, Quaternion.identity);
         smile.transform.position = transform.position + smileOffset;
@@ -114,30 +118,33 @@ public class Enemy : MonoBehaviour
 
     public static Vector2 FicaFunkcija()
     {
-        while (killCombination[idx/m, idx%n] == false){idx += 11; idx %= n * m;}
-        idx += 11; idx %= n * m;
+        while (killCombination[idx/m, idx%n] == false){ idx++; idx %= n * m;}
+        idx++; idx %= n * m;
         return new Vector2(idx / m, idx % n);
     }
 
-    float timer = 2;
-
 	void Update()
 	{
-        for(int i = 0; i < 10; i++)
+        /*for(int i = 0; i < n; ++i)
         {
-            for(int j=0;j<13;j++)
+            for(int j=0;j<m;++j)
             {
-				if (killCombination[i, j] == true)
+                if (killCombination[i,j]==true)
                 {
 					print(i + " " + j);
 				}
 			}
+        }*/
+        if (enemyCounter < expectedEnemies)
+        {
+            controller.GetComponent<EnemySpawner>().Spawn();
+            enemyCounter++;
         }
 		smile.transform.position = transform.position + smileOffset;
         eye.transform.position = transform.position + eyeOffset;
         hat.transform.position = transform.position + hatOffset;
 
-		if (Time.time > timer) { smile.GetComponent<SpriteRenderer>().enabled ^= true; timer += 2; }
+		//if (Time.time > timer) { smile.GetComponent<SpriteRenderer>().enabled ^= true; timer += 2; }
 
         if (Input.GetKey(KeyCode.N))
         {
@@ -197,11 +204,12 @@ public class Enemy : MonoBehaviour
             Nisan.nisanPosition = transform.position;
             if (Input.GetKey(KeyCode.Mouse0))
             {
+                score += 10;
                 Splat.Kill(transform);
                 Groblje.Umri();
-                GetComponent<EnemySpawner>().Spawn();
 				enemyCombination[smileNumber * n * n + eyeNumber * n + hatNumber] = false;
                 killCombination[smileNumber, soundNumber] = false;
+                expectedEnemies += 2;
                 Destroy(smile);
                 Destroy(eye);
                 Destroy(hat);
@@ -210,10 +218,10 @@ public class Enemy : MonoBehaviour
                 Player.haosLom = Player.haosMax;
                 print(Nisan.target);
                 Player.time += 15;
-                if(smileNumber==papir1.wanted.x && soundNumber == papir1.wanted.y)
-                {
-                    papir1.PomeriPaVrati();
-                }
+                //if(smileNumber==papir1.wanted.x && soundNumber == papir1.wanted.y)
+                //{
+                //    papir1.PomeriPaVrati();
+                //}
             }
         }
 
