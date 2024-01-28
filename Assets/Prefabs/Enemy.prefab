@@ -405,8 +405,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 14616c07b67f4db47bd7c30a5b048df9, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   rb: {fileID: 4215006238736627713}
   groundCheckLeft: {fileID: 5920731796379219858}
   groundCheckRight: {fileID: 4720584768555678419}
@@ -473,6 +473,7 @@ MonoBehaviour:
   RightLeg: {fileID: 3578466540494324310}
   controller: {fileID: 8369449361091067346, guid: 85925547487235945a9c687440ff6eba, type: 3}
   laughSfx: {fileID: 0}
+  papir1: {fileID: 3227713095690141751, guid: bcf91baa18eb3094db32a71c8f1aaf77, type: 3}
 --- !u!82 &4260717872882597473
 AudioSource:
   m_ObjectHideFlags: 0
@@ -585,7 +586,7 @@ Animator:
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
-  m_WarningMessage:
+  m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
