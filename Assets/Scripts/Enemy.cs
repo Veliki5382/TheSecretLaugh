@@ -27,6 +27,7 @@ public class Enemy : MonoBehaviour
     public Vector3 hatOffset;
     public GameObject LeftLeg;
     public GameObject RightLeg;
+    public GameObject controller;
 
 	private int smileNumber;
 	private int colorNumber;
@@ -74,21 +75,20 @@ public class Enemy : MonoBehaviour
         RightLeg.GetComponent<SpriteRenderer>().color = enemyColor;
     }
 
-void RandomCombination()
+    void RandomCombination()
 	{
-		smileNumber = Random.Range(1, n);
-		colorNumber = Random.Range(1, n);
-		eyeNumber = Random.Range(1, n);
-		hatNumber = Random.Range(1, n);
-        soundNumber = Random.Range(1, m);
+		smileNumber = Random.Range(0, n-1);
+		eyeNumber = Random.Range(0, n-1);
+		hatNumber = Random.Range(0, n-1);
+        soundNumber = Random.Range(0, m-1);
         
         enemyColor = new Color(Random.Range(0f, 1f), Random.Range(0f, 1f), Random.Range(0f, 1f));
         GetComponent<SpriteRenderer>().material.color = enemyColor;
 
-        enemyCombination = new bool[n * n * n * n + 2];
+        enemyCombination = new bool[(n+1)*(n+1)*(n+1)];
         killCombination = new bool[n, m];
 
-        if (enemyCombination[smileNumber * n * n * n + colorNumber * n * n + eyeNumber * n + hatNumber] == true ||
+        if (enemyCombination[smileNumber * n * n + eyeNumber * n + hatNumber] == true ||
             killCombination[smileNumber, soundNumber] == true)
 		{
 			RandomCombination();
@@ -96,19 +96,21 @@ void RandomCombination()
 		}
 		else
 		{
-			enemyCombination[smileNumber * n * n * n + colorNumber * n * n + eyeNumber * n + hatNumber] = true;
+			enemyCombination[smileNumber * n * n + eyeNumber * n + hatNumber] = true;
             killCombination[smileNumber, soundNumber] = true;
 
-            smile.GetComponent<SpriteRenderer>().sprite = smileSprite[smileNumber - 1];
-			eye.GetComponent<SpriteRenderer>().sprite = eyeSprite[eyeNumber - 1];
-            hat.GetComponent<SpriteRenderer>().sprite = hatSprite[hatNumber - 1];
-            laughSfx = soundSprite[soundNumber - 1];
+            smile.GetComponent<SpriteRenderer>().sprite = smileSprite[smileNumber];
+			eye.GetComponent<SpriteRenderer>().sprite = eyeSprite[eyeNumber];
+            hat.GetComponent<SpriteRenderer>().sprite = hatSprite[hatNumber];
+            laughSfx = soundSprite[soundNumber];
 		}
 	}
 
+    
+
     static int idx = 0;
 
-    static Vector2 FicaFunkcija()
+    public static Vector2 FicaFunkcija()
     {
         while (killCombination[idx/m, idx%n] == false){idx += 11; idx %= n * m;}
         idx += 11; idx %= n * m;
@@ -119,11 +121,27 @@ void RandomCombination()
 
 	void Update()
 	{
+        for(int i = 0; i < 10; i++)
+        {
+            for(int j=0;j<13;j++)
+            {
+				if (killCombination[i, j] == true)
+                {
+					print(i + " " + j);
+				}
+			}
+        }
 		smile.transform.position = transform.position + smileOffset;
         eye.transform.position = transform.position + eyeOffset;
         hat.transform.position = transform.position + hatOffset;
 
 		if (Time.time > timer) { smile.GetComponent<SpriteRenderer>().enabled ^= true; timer += 2; }
+
+        if (Input.GetKey(KeyCode.N))
+        {
+            print("Spawned");
+			controller.GetComponent<EnemySpawner>().Spawn();
+		}
 	}
 
 	void FixedUpdate()
@@ -179,7 +197,8 @@ void RandomCombination()
             {
                 Splat.Kill(transform);
                 Groblje.Umri();
-				enemyCombination[smileNumber * n * n * n + colorNumber * n * n + eyeNumber * n + hatNumber] = false;
+                GetComponent<EnemySpawner>().Spawn();
+				enemyCombination[smileNumber * n * n + eyeNumber * n + hatNumber] = false;
                 killCombination[smileNumber, soundNumber] = false;
                 Destroy(smile);
                 Destroy(eye);
