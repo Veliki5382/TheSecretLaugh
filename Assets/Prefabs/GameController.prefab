@@ -44,13 +44,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3117c7fb826a0704c853d578bb26c47b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 8200594937283117494, guid: bc36fe8a7e2814847b494b5b7d5e9bb6, type: 3}
-  enemy: {fileID: 6464788616710423733, guid: 278bd1eb0995a1442b3cc58bf9879d5f, type: 3}
-  lowerSpawner:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  upperSpawner:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  enemy: {fileID: 3796807995791531737, guid: 278bd1eb0995a1442b3cc58bf9879d5f, type: 3}
