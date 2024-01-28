@@ -30,6 +30,8 @@ public class Enemy : MonoBehaviour
     public GameObject LeftLeg;
     public GameObject RightLeg;
     public GameObject controller;
+    public float smileTimer = 100;
+    public float smileTime = 0;
 
     private int smileNumber;
 	private int eyeNumber;
@@ -104,7 +106,8 @@ public class Enemy : MonoBehaviour
             NEMOGUVISESVEDATRPAMUENEMYA.killCombination[smileNumber, soundNumber] = true;
 
             smile.GetComponent<SpriteRenderer>().sprite = smileSprite[smileNumber];
-			eye.GetComponent<SpriteRenderer>().sprite = eyeSprite[eyeNumber];
+            smile.GetComponent<SpriteRenderer>().enabled = false;
+            eye.GetComponent<SpriteRenderer>().sprite = eyeSprite[eyeNumber];
             hat.GetComponent<SpriteRenderer>().sprite = hatSprite[hatNumber];
             laughSfx = soundSprite[soundNumber];
 		}
@@ -138,6 +141,15 @@ public class Enemy : MonoBehaviour
 
 	void FixedUpdate()
     {
+        if (smileTime < smileTimer)
+        {
+            smileTime++;
+        }
+        else if(smileTime>=smileTimer)
+        {
+            smile.GetComponent<SpriteRenderer>().enabled = false;
+        }
+
 		rb.velocity = new Vector2(horizontal * ms * Player.haosLom, rb.velocity.y);
         if (rb.velocity.y > 0) gameObject.layer = 10;
         else gameObject.layer = 8;
@@ -262,6 +274,8 @@ public class Enemy : MonoBehaviour
         {
             //smej se
             aurdio.PlayOneShot(laughSfx, 0.2f);
+            smile.GetComponent<SpriteRenderer>().enabled = true;
+            smileTime = 0;
         }
     }
 }
