@@ -854,7 +854,7 @@ MonoBehaviour:
   jumpSfx: {fileID: 8300000, guid: e46e7b1dcfb961c4997252f2a9dd667b, type: 3}
   pistolj: {fileID: 1434416829961351449}
   animator: {fileID: 8579565214071028066}
-  papir1: {fileID: 0}
+  papir1: {fileID: 3227713095690141751, guid: bcf91baa18eb3094db32a71c8f1aaf77, type: 3}
   papir2: {fileID: 0}
   papir3: {fileID: 0}
 --- !u!61 &3213277135968468602
