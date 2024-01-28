@@ -10,10 +10,12 @@ public class Papir1 : MonoBehaviour
     public AudioClip[] soundSprite;
     public Vector2 wanted;
     public Image osmeh;
+    public AudioSource aurdio;
+    public RectTransform rt;
 
     private float startCD;
     private float startCD1;
-    bool bioPrvi;
+    private bool bioPrvi;
 
     private void Start()
     {
@@ -27,8 +29,18 @@ public class Papir1 : MonoBehaviour
         {
             bioPrvi = true;
             wanted = Enemy.FicaFunkcija();
-            print(wanted);
+            osmeh.sprite = smileSprite[(int)wanted.x];
         }
-        osmeh.sprite = smileSprite[(int)wanted.x];
+        print(rt.anchoredPosition);
+    }
+
+    public void PlaySound()
+    {
+        if (!Input.GetKey(KeyCode.Space)) aurdio.PlayOneShot(soundSprite[(int)wanted.y],0.2f);
+    }
+
+    public void PomeriPaVrati()
+    {
+        
     }
 }
