@@ -8,9 +8,6 @@ TagManager:
   - Wall
   - MovingPlatform
   - Pero
-  - Papir1
-  - Papir2
-  - Papir3
   layers:
   - Default
   - TransparentFX
