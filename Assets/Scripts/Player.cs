@@ -39,8 +39,8 @@ public class Player : MonoBehaviour
     {
         aurdio = GetComponent<AudioSource>();
         haosLom = 1;
-        haosMax = 4;
-        time = 5;
+        haosMax = 2;
+        time = 30;
         umro = false;
     }
 
