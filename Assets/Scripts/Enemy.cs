@@ -162,7 +162,7 @@ public class Enemy : MonoBehaviour
 		if (Mathf.Abs(Nisan.mousePosition.x - transform.position.x) <= 1 && Mathf.Abs(Nisan.mousePosition.y - transform.position.y) <= 1)
         {
             //zasvetli enemya
-            sr.color = Color.magenta;
+            sr.color = Color.gray;
             
         }
         else
