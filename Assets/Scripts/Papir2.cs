@@ -24,7 +24,7 @@ public class Papir2 : MonoBehaviour
 
     private void Start()
     {
-        pocPozX = score.transform.position.x-150 / 1115 * Screen.width;
+        pocPozX = 0.1f * Screen.width;
         transform.position = new Vector2(-400,transform.position.y);
         moze = false;
         moze1 = true;
