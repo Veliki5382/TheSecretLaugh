@@ -33,12 +33,12 @@ public class Papir3 : MonoBehaviour
     {
         //print(rt.transform.position);
         //print(pomeranjeLevo);
-        if (Player.score >= 1) moze = true;
+        if (Player.score >= 3) moze = true;
         if (pomeranjeLevo && rt.transform.position.x >= -100)
         {
             rt.transform.position = rt.transform.position - new Vector3(Time.fixedDeltaTime * ms, 0, 0);
         }
-        if (rt.transform.position.x <= -100 && moze)
+        if (rt.transform.position.x <= -100 && moze && moze1)
         {
             pomeranjeLevo = false;
             wanted = NEMOGUVISESVEDATRPAMUENEMYA.FicaFunkcija();

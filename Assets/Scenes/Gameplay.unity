@@ -5418,7 +5418,7 @@ MonoBehaviour:
   osmeh: {fileID: 1277619063399657938}
   aurdio: {fileID: 6104612797111182202}
   rt: {fileID: 7374766289912232675}
-  ms: 0
+  ms: 200
 --- !u!1001 &7830448801178529284
 PrefabInstance:
   m_ObjectHideFlags: 0
