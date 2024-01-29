@@ -25,13 +25,13 @@ public class EnemySpawner : MonoBehaviour
 			switch (randomIndex)
 			{
 				default:
-					spawnPosition = new Vector3(1.9f, -1.19f, 2f);
+					spawnPosition = new Vector3(1.9f, -1.19f, -5f);
 					break;
 				case 1:
-					spawnPosition = new Vector3(-17.48f, 7.86f, 2f);
+					spawnPosition = new Vector3(-17.48f, 7.86f, -5f);
 					break;
 				case 2:
-					spawnPosition = new Vector3(18f, 1.05f, 2f);
+					spawnPosition = new Vector3(18f, 1.05f, -5f);
 					break;
 			}
 
@@ -45,13 +45,13 @@ public class EnemySpawner : MonoBehaviour
 			switch (randomIndex)
 			{
 				default:
-					spawnPosition = new Vector3(16.12f, 32.2f, 2f);
+					spawnPosition = new Vector3(16.12f, 32.2f, -5f);
 					break;
 				case 1:
-					spawnPosition = new Vector3(-4.5f, 36.16f, 2f);
+					spawnPosition = new Vector3(-4.5f, 36.16f, -5f);
 					break;
 				case 2:
-					spawnPosition = new Vector3(-19f, 27.95f, 2f);
+					spawnPosition = new Vector3(-19f, 27.95f, -5f);
 					break;
 			}
 

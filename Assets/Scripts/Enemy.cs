@@ -80,10 +80,10 @@ public class Enemy : MonoBehaviour
 
     void RandomCombination()
 	{
-		smileNumber = Random.Range(0, n-1);
-		eyeNumber = Random.Range(0, n-1);
-		hatNumber = Random.Range(0, n-1);
-        soundNumber = Random.Range(0, m-1);
+		smileNumber = Random.Range(0, n);
+		eyeNumber = Random.Range(0, n);
+		hatNumber = Random.Range(0, n);
+        soundNumber = Random.Range(0, m);
 
         enemyColor = new Color(Random.Range(0f, 1f), Random.Range(0f, 1f), Random.Range(0f, 1f));
         GetComponent<SpriteRenderer>().material.color = enemyColor;
